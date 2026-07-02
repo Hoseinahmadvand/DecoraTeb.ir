@@ -1,0 +1,202 @@
+﻿@page
+@model DecoraTeb.Areas.Admin.Pages.Blog.IndexModel
+@{
+}
+
+<div class="row">
+                <!-- [ sample-page ] start -->
+                <div class="col-sm-12">
+                    <div class="card table-card">
+                        <div class="card-body">
+                            <div class="text-end p-4 pb-sm-2">
+                                <a href="#" class="btn btn-primary d-inline-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#customer-edit_add-modal">
+                                    <i class="ti ti-plus f-18"></i> افزودن مشتری
+                                </a>
+                            </div>
+                            <div class="table-responsive">
+                                <div class="datatable-wrapper datatable-loading no-footer searchable fixed-columns"><div class="datatable-top">
+    <div class="datatable-dropdown">
+            <label>
+                <select class="datatable-selector"><option value="5" selected="">5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option></select> ورودی در هر صفحه
+            </label>
+        </div>
+    <div class="datatable-search">
+            <input class="datatable-input" placeholder="جستوجو..." type="search" title="در جدول جستجو کنید" aria-controls="pc-dt-simple">
+        </div>
+</div>
+<div class="datatable-container"><table class="table table-hover datatable-table" id="pc-dt-simple"><thead><tr><th style="width: 7.349081364829396%;">#</th><th style="width: 30.866141732283463%;">نام مشتری</th><th style="width: 16.95538057742782%;">تماس</th><th style="width: 8.556430446194225%;">سفارشات</th><th style="width: 8.346456692913385%;">هزینه‌کرد</th><th style="width: 9.028871391076116%;">وضعیت</th><th class="text-center" style="width: 18.89763779527559%;">عملیات</th></tr></thead><tbody><tr data-index="0"><td>179</td><td>
+                                                <div class="row">
+                                                    <div class="col-auto">
+                                                        <img src="../assets/images/user/avatar-1.jpg" alt="user-image" class="wid-40 rounded-circle">
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mb-0">ادی بس</h6>
+                                                        <p class="text-muted f-12 mb-0">
+                                                            <a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="224f435047544362454f434b4e0c414d4f">ایمیل
+                                                                محافظت شده</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td><td style="font-family: titr; ">+98(21)849-6968</td><td style="font-family: titr; ">45</td><td style="font-family: titr; ">7,634</td><td>
+                                                <span class="badge bg-light-success rounded-pill f-12">رابطه</span>
+                                            </td><td class="text-center">
+                                                <ul class="list-inline me-auto mb-0">
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="مشاهده" data-bs-original-title="مشاهده">
+                                                        <a href="#" class="avtar avtar-xs btn-link-secondary btn-pc-default" data-bs-toggle="modal" data-bs-target="#customer-modal">
+                                                            <i class="ti ti-eye f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="ویرایش" data-bs-original-title="ویرایش">
+                                                        <a href="#" class="avtar avtar-xs btn-link-success btn-pc-default" data-bs-toggle="modal" data-bs-target="#customer-edit_add-modal">
+                                                            <i class="ti ti-edit-circle f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="حذف" data-bs-original-title="حذف">
+                                                        <a href="#" class="avtar avtar-xs btn-link-danger btn-pc-default">
+                                                            <i class="ti ti-trash f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td></tr><tr data-index="1"><td>60</td><td>
+                                                <div class="row">
+                                                    <div class="col-auto">
+                                                        <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="wid-40 rounded-circle">
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mb-0">اگنس مک‌گی</h6>
+                                                        <p class="text-muted f-12 mb-0">
+                                                            <a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="577f72757657707a767e7b3974787a">ایمیل
+                                                                محافظت شده</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td><td style="font-family: titr; ">+98(21)849-6968</td><td style="font-family: titr; ">42</td><td style="font-family: titr; ">3,742</td><td>
+                                                <span class="badge bg-light-primary rounded-pill f-12">مجرد</span>
+                                            </td><td class="text-center">
+                                                <ul class="list-inline me-auto mb-0">
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="مشاهده" data-bs-original-title="مشاهده">
+                                                        <a href="#" class="avtar avtar-xs btn-link-secondary btn-pc-default" data-bs-toggle="modal" data-bs-target="#customer-modal">
+                                                            <i class="ti ti-eye f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="ویرایش" data-bs-original-title="ویرایش">
+                                                        <a href="#" class="avtar avtar-xs btn-link-success btn-pc-default" data-bs-toggle="modal" data-bs-target="#customer-edit_add-modal">
+                                                            <i class="ti ti-edit-circle f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="حذف" data-bs-original-title="حذف">
+                                                        <a href="#" class="avtar avtar-xs btn-link-danger btn-pc-default">
+                                                            <i class="ti ti-trash f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td></tr><tr data-index="2"><td>133</td><td>
+                                                <div class="row">
+                                                    <div class="col-auto">
+                                                        <img src="../assets/images/user/avatar-3.jpg" alt="user-image" class="wid-40 rounded-circle">
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mb-0">آلبرتا رابینز</h6>
+                                                        <p class="text-muted f-12 mb-0">
+                                                            <a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="6805011209280f05090104460b0705">ایمیل
+                                                                محافظت شده</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td><td style="font-family: titr; ">+98(21)849-6968</td><td style="font-family: titr; ">20</td><td style="font-family: titr; ">885</td><td>
+                                                <span class="badge bg-light-danger rounded-pill f-12">پیچیده</span>
+                                            </td><td class="text-center">
+                                                <ul class="list-inline me-auto mb-0">
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="مشاهده" data-bs-original-title="مشاهده">
+                                                        <a href="#" class="avtar avtar-xs btn-link-secondary btn-pc-default" data-bs-toggle="modal" data-bs-target="#customer-modal">
+                                                            <i class="ti ti-eye f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="ویرایش" data-bs-original-title="ویرایش">
+                                                        <a href="#" class="avtar avtar-xs btn-link-success btn-pc-default" data-bs-toggle="modal" data-bs-target="#customer-edit_add-modal">
+                                                            <i class="ti ti-edit-circle f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="حذف" data-bs-original-title="حذف">
+                                                        <a href="#" class="avtar avtar-xs btn-link-danger btn-pc-default">
+                                                            <i class="ti ti-trash f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td></tr><tr data-index="3"><td>60</td><td>
+                                                <div class="row">
+                                                    <div class="col-auto">
+                                                        <img src="../assets/images/user/avatar-4.jpg" alt="user-image" class="wid-40 rounded-circle">
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mb-0">اگنس مک‌گی</h6>
+                                                        <p class="text-muted f-12 mb-0">
+                                                            <a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="d7bfb2b5b697beb4b8b0b5f7bab6b4">ایمیل
+                                                                محافظت شده</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td><td style="font-family: titr; ">+98(21)849-6968</td><td style="font-family: titr; ">42</td><td style="font-family: titr; ">3,742</td><td>
+                                                <span class="badge bg-light-primary rounded-pill f-12">مجرد</span>
+                                            </td><td class="text-center">
+                                                <ul class="list-inline me-auto mb-0">
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="مشاهده" data-bs-original-title="مشاهده">
+                                                        <a href="#" class="avtar avtar-xs btn-link-secondary btn-pc-default" data-bs-toggle="modal" data-bs-target="#customer-modal">
+                                                            <i class="ti ti-eye f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="ویرایش" data-bs-original-title="ویرایش">
+                                                        <a href="#" class="avtar avtar-xs btn-link-success btn-pc-default" data-bs-toggle="modal" data-bs-target="#customer-edit_add-modal">
+                                                            <i class="ti ti-edit-circle f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="حذف" data-bs-original-title="حذف">
+                                                        <a href="#" class="avtar avtar-xs btn-link-danger btn-pc-default">
+                                                            <i class="ti ti-trash f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td></tr><tr data-index="4"><td>60</td><td>
+                                                <div class="row">
+                                                    <div class="col-auto">
+                                                        <img src="../assets/images/user/avatar-5.jpg" alt="user-image" class="wid-40 rounded-circle">
+                                                    </div>
+                                                    <div class="col">
+                                                        <h6 class="mb-0">اگنس مک‌گی</h6>
+                                                        <p class="text-muted f-12 mb-0">
+                                                            <a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="d9b1bcbbb899b0bab6bebbf7bab6b4">ایمیل
+                                                                محافظت شده</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td><td style="font-family: titr; ">+98(21)849-6968</td><td style="font-family: titr; ">42</td><td style="font-family: titr; ">3,742</td><td>
+                                                <span class="badge bg-light-primary rounded-pill f-12">مجرد</span>
+                                            </td><td class="text-center">
+                                                <ul class="list-inline me-auto mb-0">
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="مشاهده" data-bs-original-title="مشاهده">
+                                                        <a href="#" class="avtar avtar-xs btn-link-secondary btn-pc-default" data-bs-toggle="modal" data-bs-target="#customer-modal">
+                                                            <i class="ti ti-eye f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="ویرایش" data-bs-original-title="ویرایش">
+                                                        <a href="#" class="avtar avtar-xs btn-link-success btn-pc-default" data-bs-toggle="modal" data-bs-target="#customer-edit_add-modal">
+                                                            <i class="ti ti-edit-circle f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item align-bottom" data-bs-toggle="tooltip" aria-label="حذف" data-bs-original-title="حذف">
+                                                        <a href="#" class="avtar avtar-xs btn-link-danger btn-pc-default">
+                                                            <i class="ti ti-trash f-18"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td></tr></tbody></table></div>
+<div class="datatable-bottom">
+    <div class="datatable-info">در حال نمایش 1 به 5 از 9 ورودی ها</div>
+    <nav class="datatable-pagination"><ul class="datatable-pagination-list"><li class="datatable-pagination-list-item datatable-hidden datatable-disabled"><button data-page="1" class="datatable-pagination-list-item-link" aria-label="صفحه 1">‹</button></li><li class="datatable-pagination-list-item datatable-active"><button data-page="1" class="datatable-pagination-list-item-link" aria-label="صفحه 1">1</button></li><li class="datatable-pagination-list-item"><button data-page="2" class="datatable-pagination-list-item-link" aria-label="صفحه 2">2</button></li><li class="datatable-pagination-list-item"><button data-page="2" class="datatable-pagination-list-item-link" aria-label="صفحه 2">›</button></li></ul></nav>
+</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- [ sample-page ] end -->
+            </div>

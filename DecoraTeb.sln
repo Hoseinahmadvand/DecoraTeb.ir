@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecoraTeb", "DecoraTeb\DecoraTeb.csproj", "{8A253732-1206-41EB-BA83-9D0332821975}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A253732-1206-41EB-BA83-9D0332821975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A253732-1206-41EB-BA83-9D0332821975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A253732-1206-41EB-BA83-9D0332821975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A253732-1206-41EB-BA83-9D0332821975}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB6AD662-E53A-40CD-B37B-079C7AAB4AE8}
+	EndGlobalSection
+EndGlobal

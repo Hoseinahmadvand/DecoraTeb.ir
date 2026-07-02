@@ -1,0 +1,13 @@
+﻿namespace DecoraTeb.Data.Entities;
+
+public class FAQ : BaseEntity
+{
+    public string Question { get; set; }
+    public string Answer { get; set; }
+    public int   OrderSort { get; set; }
+    public bool IsActive { get; set; }
+}
+
+
+
+
