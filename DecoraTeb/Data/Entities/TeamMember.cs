@@ -1,12 +1,6 @@
 ﻿
 using DecoraTeb.Data.Entities;
 
-public class User : BaseEntity
-{
-    public string FullName { get; set; }
-    public bool IsAdmin { get; set; }
-    public string Password { get; set; }
-}
 public class TeamMember : BaseEntity
 {
     public string FullName { get; set; }

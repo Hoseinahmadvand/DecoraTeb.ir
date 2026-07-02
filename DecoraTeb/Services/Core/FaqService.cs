@@ -7,7 +7,7 @@ namespace DecoraTeb.Services.Core;
 
 public class FaqService : CrudService<FAQ>, IFaqService
 {
-    public FaqService(ApplicationDbContext context, IWebHostEnvironment environment, ILogger logger) : base(context, environment, logger)
+    public FaqService(ApplicationDbContext context, IWebHostEnvironment environment) : base(context, environment)
     {
     }
 }

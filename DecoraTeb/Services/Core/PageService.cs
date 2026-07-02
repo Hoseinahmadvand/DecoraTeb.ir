@@ -6,7 +6,7 @@ namespace DecoraTeb.Services.Core;
 
 public class PageService : CrudService<WebPage>, IPageService
 {
-    public PageService(ApplicationDbContext context, IWebHostEnvironment environment, ILogger logger) : base(context, environment, logger)
+    public PageService(ApplicationDbContext context, IWebHostEnvironment environment) : base(context, environment)
     {
     }
 }

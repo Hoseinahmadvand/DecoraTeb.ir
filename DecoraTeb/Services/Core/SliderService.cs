@@ -8,7 +8,7 @@ namespace DecoraTeb.Services.Core;
 
 public class SliderService : CrudService<Slider>, ISliderService
 {
-    public SliderService(ApplicationDbContext context, IWebHostEnvironment environment, ILogger logger) : base(context, environment, logger)
+    public SliderService(ApplicationDbContext context, IWebHostEnvironment environment ) : base(context, environment )
     {
     }
 

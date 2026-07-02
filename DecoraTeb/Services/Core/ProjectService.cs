@@ -11,9 +11,9 @@ public class ProjectService
 {
     public ProjectService(
         ApplicationDbContext context,
-        IWebHostEnvironment environment,
-        ILogger logger) 
-        : base(context, environment, logger)
+        IWebHostEnvironment environment
+       ) 
+        : base(context, environment)
     {
     }
 

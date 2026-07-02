@@ -8,13 +8,13 @@ public abstract class BaseService
 {
     protected readonly ApplicationDbContext _context;
     protected readonly IWebHostEnvironment _environment;
-    protected readonly ILogger _logger;
+   // protected readonly ILogger _logger;
 
-    protected BaseService(ApplicationDbContext context, IWebHostEnvironment environment, ILogger logger)
+    protected BaseService(ApplicationDbContext context, IWebHostEnvironment environment)
     {
         _context = context;
         _environment = environment;
-        _logger = logger;
+       ;
     }
     protected async Task SaveAsync()
     {

@@ -7,7 +7,7 @@ namespace DecoraTeb.Services.Core;
 
 public class TestimonailService : CrudService<Testimonial>, ITestimonailService
 {
-    public TestimonailService(ApplicationDbContext context, IWebHostEnvironment environment, ILogger logger) : base(context, environment, logger)
+    public TestimonailService(ApplicationDbContext context, IWebHostEnvironment environment) : base(context, environment)
     {
     }
 }

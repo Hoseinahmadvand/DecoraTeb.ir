@@ -12,4 +12,22 @@ public interface IImageService
         int height);
 }
 
+public class ImageService : IImageService
+{
+    public Task DeleteAsync(string filename)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<string> ResizeAsync(IFormFile file, string folder, int width, int height)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<string> SaveAsync(IFormFile file, string folder)
+    {
+        throw new NotImplementedException();
+    }
+}
+
 

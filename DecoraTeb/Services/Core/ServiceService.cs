@@ -8,7 +8,7 @@ namespace DecoraTeb.Services.Core;
 
 public class ServiceService : CrudService<Service>, IServiceService
 {
-    public ServiceService(ApplicationDbContext context, IWebHostEnvironment environment, ILogger logger) : base(context, environment, logger)
+    public ServiceService(ApplicationDbContext context, IWebHostEnvironment environment) : base(context, environment )
     {
     }
 

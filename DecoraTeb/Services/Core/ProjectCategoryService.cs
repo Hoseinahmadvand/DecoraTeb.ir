@@ -7,7 +7,7 @@ namespace DecoraTeb.Services.Core;
 
 public class ProjectCategoryService : CrudService<ProjectCategory>, IProjectCategoryService
 {
-    public ProjectCategoryService(ApplicationDbContext context, IWebHostEnvironment environment, ILogger logger) : base(context, environment, logger)
+    public ProjectCategoryService(ApplicationDbContext context, IWebHostEnvironment environment) : base(context, environment)
     {
     }
 }

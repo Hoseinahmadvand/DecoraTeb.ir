@@ -11,3 +11,15 @@ public interface ISlugService
 }
 
 
+public class SlugService : ISlugService
+{
+    public string Generate(string text)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<string> GenerateUniqueAsync<T>(string text) where T : SeoEntity
+    {
+        throw new NotImplementedException();
+    }
+}

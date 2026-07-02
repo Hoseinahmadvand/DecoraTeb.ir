@@ -8,7 +8,7 @@ namespace DecoraTeb.Services.Core;
 
 public class BlogService : CrudService<Blog>, IBlogService
 {
-    public BlogService(ApplicationDbContext context, IWebHostEnvironment environment, ILogger logger) : base(context, environment, logger)
+    public BlogService(ApplicationDbContext context, IWebHostEnvironment environment ) : base(context, environment)
     {
     }
 

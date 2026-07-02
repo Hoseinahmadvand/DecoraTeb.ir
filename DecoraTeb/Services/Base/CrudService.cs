@@ -9,9 +9,9 @@ public class CrudService<TEntity> : BaseService, ICrudService<TEntity>
     where TEntity : BaseEntity
 {
     public CrudService(ApplicationDbContext context,
-                       IWebHostEnvironment environment,
-                       ILogger logger) 
-        : base(context, environment, logger)
+                       IWebHostEnvironment environment
+                       ) 
+        : base(context, environment)
     {
     }
     public virtual async Task<List<TEntity>> GetAllAsync()
