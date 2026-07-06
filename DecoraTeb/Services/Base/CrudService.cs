@@ -28,10 +28,7 @@ public class CrudService<TEntity> : BaseService, ICrudService<TEntity>
     }
 
 
-    public Task<bool> CreateAsync(TEntity entity)
-    {
-        throw new NotImplementedException();
-    }
+   
 
     public virtual async Task<bool> DeleteAsync(long id)
     {
@@ -45,6 +42,25 @@ public class CrudService<TEntity> : BaseService, ICrudService<TEntity>
     public virtual async Task<bool> ExistAsync(long id)
     {
         return await Table<TEntity>().AnyAsync(x => x.Id == id);
+    }
+
+    protected virtual async Task<bool> CreateEntityAsync(TEntity entity)
+    {
+        await Table<TEntity>().AddAsync(entity);
+        return await SaveChangesAsync();
+    }
+
+    protected virtual async Task<bool> UpdateEntityAsync(TEntity entity)
+    {
+        Table<TEntity>().Update(entity);
+        return await SaveChangesAsync();
+    }
+    protected async Task<bool> SaveChangesAsync()
+      => await _context.SaveChangesAsync() > 0;
+
+    public Task<bool> CreateAsync(TEntity entity)
+    {
+        throw new NotImplementedException();
     }
 
     public Task<bool> UpdateAsync(TEntity entity)

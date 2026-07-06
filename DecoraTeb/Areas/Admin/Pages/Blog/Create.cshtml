@@ -1,0 +1,24 @@
+﻿@page
+@model DecoraTeb.Areas.Admin.Pages.Blog.CreateModel
+@{
+}
+
+<h4 class="mb-4">
+
+ثبت مقاله
+
+</h4>
+
+<form method="post"
+      enctype="multipart/form-data">
+
+    <partial name="_CreateOrEdit"
+             model="Model.Blog"/>
+
+</form>
+
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial"/>
+
+}

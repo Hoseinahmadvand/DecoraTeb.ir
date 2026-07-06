@@ -1,0 +1,13 @@
+﻿@{
+}
+<script>
+    $(".edit-btn").click(function () {
+
+        $("#Category_Id").val($(this).data("id"));
+
+        $("#Category_Title").val($(this).data("title"));
+
+        $("#Category_Slug").val($(this).data("slug"));
+
+    });
+    </script>

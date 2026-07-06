@@ -1,0 +1,160 @@
+﻿@using DecoraTeb.ViewModels.Blog
+@model BlogFormVm
+<div class="col-12">
+<div class="card mb-4">
+
+    <div class="card-header">
+
+        اطلاعات اصلی
+
+    </div>
+
+    <div class="card-body">
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+
+                <label asp-for="Title"></label>
+
+                <input asp-for="Title" class="form-control" />
+
+                <span asp-validation-for="Title"></span>
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label asp-for="BlogCategoryId"></label>
+
+                    <select asp-for="BlogCategoryId"
+                            asp-items="@(ViewData["Categories"] as List<SelectListItem>)"
+                            class="form-select">
+                        <option value="">انتخاب کنید</option>
+                    </select>
+
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="Summary"></label>
+
+            <textarea asp-for="Summary"
+                      class="form-control"></textarea>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="Content"></label>
+
+            <textarea asp-for="Content"
+                      id="editor"
+                      class="form-control"></textarea>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <label asp-for="Author"></label>
+
+                <input asp-for="Author"
+                       class="form-control" />
+
+            </div>
+
+            <div class="col-md-4">
+
+                <label asp-for="PublishDate"></label>
+
+                <input asp-for="PublishDate"
+                       type="date"
+                       class="form-control" />
+
+            </div>
+
+            <div class="col-md-4">
+
+                <label asp-for="ReadingTime"></label>
+
+                <input asp-for="ReadingTime"
+                       class="form-control" />
+
+            </div>
+
+        </div>
+
+        <div class="mt-3">
+
+            <label asp-for="ImageFile"></label>
+
+            <input asp-for="ImageFile"
+                   class="form-control" />
+
+        </div>
+
+        <div class="form-check mt-3">
+
+            <input asp-for="IsPublished"
+                   class="form-check-input" />
+
+            <label asp-for="IsPublished"
+                   class="form-check-label"></label>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="card-header">
+
+        تنظیمات سئو
+
+    </div>
+
+    <div class="card-body">
+
+        <input asp-for="Slug" class="form-control mb-3" />
+
+        <input asp-for="SeoTitle" class="form-control mb-3" />
+
+        <textarea asp-for="SeoDescription"
+                  class="form-control mb-3"></textarea>
+
+        <textarea asp-for="SeoKeywords"
+                  class="form-control mb-3"></textarea>
+
+        <input asp-for="CanonicalUrl"
+               class="form-control mb-3" />
+
+        <input asp-for="Robots"
+               class="form-control" />
+
+    </div>
+
+</div>
+
+<div class="mt-4">
+
+    <button class="btn btn-success">
+
+        ذخیره اطلاعات
+
+    </button>
+
+    <a asp-page="Index"
+       class="btn btn-secondary">
+
+        بازگشت
+
+    </a>
+
+</div>
+</div>

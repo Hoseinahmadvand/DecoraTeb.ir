@@ -1,12 +1,27 @@
 ﻿using DecoraTeb.Data.Entities;
+using DecoraTeb.ViewModels.Blog;
 
 namespace DecoraTeb.Services.Interfaces.Core;
 
-public interface IBlogService : ICrudService<Blog>
+public interface IBlogService
 {
-    Task<List<Blog>> GetLastBlogsAsync();
-    Task<List<Blog>> SearchAsync(string keyword);
-    Task<Blog?> GetBySlugAsync(string slug);
+    Task<List<BlogListItemVm>> GetAllAsync();
+
+    Task<BlogDetailsVm?> GetByIdAsync(long id);
+
+    Task<UpdateBlogVm?> GetForEditAsync(long id);
+
+    Task<bool> CreateAsync(CreateBlogVm model);
+
+    Task<bool> UpdateAsync(UpdateBlogVm model);
+
+    Task<bool> DeleteAsync(long id);
+
+    Task<List<BlogListItemVm>> GetLastBlogsAsync(int count = 6);
+
+    Task<List<BlogListItemVm>> SearchAsync(string keyword);
+
+    Task<BlogDetailsVm?> GetBySlugAsync(string slug);
 }
 
 
