@@ -1,0 +1,153 @@
+﻿@using DecoraTeb.ViewModels.ProjectCategory
+@model ProjectCategoryFormVm
+
+@{
+    var modalId = ViewData["ModalId"]?.ToString();
+    var title = ViewData["ModalTitle"]?.ToString();
+    var handler = ViewData["Handler"]?.ToString();
+}
+
+<div class="modal fade"
+     id="@modalId"
+     tabindex="-1">
+  
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <form method="post"
+                  asp-page-handler="@handler">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">
+                        @title
+                    </h5>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    @if (handler == "Edit")
+                    {
+                        <input asp-for="Id" type="hidden" />
+                    }
+
+                    <div class="mb-3">
+
+                        <label asp-for="Title"
+                               class="form-label">
+                        </label>
+
+                        <input asp-for="Title"
+                               class="form-control" />
+
+                        <span asp-validation-for="Title"
+                              class="text-danger">
+                        </span>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label asp-for="SortOrder"
+                               class="form-label">
+                        </label>
+
+                        <input asp-for="SortOrder"
+                               class="form-control" />
+
+                    </div>
+
+                    <hr />
+
+                    <h5 class="mb-3">
+                        تنظیمات سئو
+                    </h5>
+
+                    <div class="mb-3">
+
+                        <label asp-for="Slug"></label>
+
+                        <input asp-for="Slug"
+                               class="form-control" />
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label asp-for="SeoTitle"></label>
+
+                        <input asp-for="SeoTitle"
+                               class="form-control" />
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label asp-for="SeoDescription"></label>
+
+                        <textarea asp-for="SeoDescription"
+                                  class="form-control"></textarea>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label asp-for="SeoKeywords"></label>
+
+                        <textarea asp-for="SeoKeywords"
+                                  class="form-control"></textarea>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label asp-for="CanonicalUrl"></label>
+
+                        <input asp-for="CanonicalUrl"
+                               class="form-control" />
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label asp-for="Robots"></label>
+
+                        <input asp-for="Robots"
+                               class="form-control" />
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button class="btn btn-success">
+
+                        ذخیره
+
+                    </button>
+
+                    <button class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                            type="button">
+
+                        انصراف
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

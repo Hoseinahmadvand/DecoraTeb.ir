@@ -1,4 +1,83 @@
 ﻿@page
+@using DecoraTeb.Extensions
 @model DecoraTeb.Pages.BlogsModel
 @{
 }
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-header blueprint-bg-dark">
+    <div class="container">
+        <nav class="page-crumb">
+            <a href="dekoratebb.html">خانه</a> <span class="sep">/</span> <span>بلاگ</span>
+        </nav>
+        <h1>راهنمای طراحی فضای درمانی</h1>
+        <p>یادداشت‌های تیم دکوراطب درباره چیدمان، نورپردازی، متریال و مدیریت پروژه‌های مطب و کلینیک.</p>
+    </div>
+    <div class="hs-shape"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,30 C280,80 500,0 760,22 C1040,46 1200,8 1440,38 L1440,70 L0,70 Z" fill="#fbf8f2"></path></svg></div>
+</section>
+
+<!-- ===== BLOG GRID ===== -->
+<section class="section-pad">
+    <div class="container">
+        <div class="d-flex justify-content-center filter-pills mb-5 flex-wrap">
+            <a class="btn active" data-filter="all">همه مقالات</a>
+            @foreach(var item in Model.CategoryListItem)
+            {
+                <a class="btn" data-filter="light">@item.Title</a>
+            }
+           
+        
+        </div>
+
+              
+        <div class="row g-4" id="blogGrid">
+            @foreach (var item in Model.BlogListItem)
+            {
+                <div class="col-md-6 col-lg-4 project-item reveal in" data-cat="layout">
+                    <div class="blog-card">
+                        <div class="blog-thumb">
+                            <img src="/uploads/blogs/@item.Image"
+                                 alt="@item.Title">
+                        <span class="blog-cat">@item.BlogCategoryId</span></div>
+                        <div class="blog-body">
+                            <div class="blog-meta mb-2"><i class="bi bi-calendar3 me-1"></i> @item.PublishDate.ToShamsi()</div>
+                            <h5>@item.Title</h5>
+                            <p>@item.Summary</p>
+                            <a href="#" class="text-forest fw-bold text-decoration-none">ادامه مطلب <i class="bi bi-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+        
+         
+            }
+       
+        </div>
+
+        <div class="pagination-custom">
+            <button><i class="bi bi-chevron-right"></i></button>
+            <button class="active">۱</button>
+            <button>۲</button>
+            <button>۳</button>
+            <button><i class="bi bi-chevron-left"></i></button>
+        </div>
+    </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="pb-5">
+    <div class="container">
+        <div class="newsletter-band reveal">
+            <div class="row align-items-center position-relative">
+                <div class="col-lg-6">
+                    <h2 class="mb-2">مقالات تازه را زودتر از همه بخوانید</h2>
+                    <p class="mb-0 opacity-75">عضو خبرنامه دکوراطب شوید تا جدیدترین راهنماهای طراحی فضای درمانی را دریافت کنید.</p>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <form class="d-flex gap-2 flex-wrap flex-sm-nowrap position-relative" onsubmit="return false;">
+                        <input type="email" placeholder="ایمیل شما" required>
+                        <button type="submit" class="btn btn-copper flex-shrink-0">عضویت</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

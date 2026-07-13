@@ -1,6 +1,6 @@
 ﻿namespace DecoraTeb.ViewModels.Blog;
 
-public class BlogDetailsVm : BlogBaseVm
+public class BlogDetailsVm : BlogVm
 {
     public long Id { get; set; }
 }

@@ -1,0 +1,30 @@
+﻿@page
+@model DecoraTeb.Areas.Admin.Pages.Services.CreateModel
+@{
+}
+<div class="card col-12">
+
+    <div class="card-header">
+
+        <h4>افزودن خدمت</h4>
+
+    </div>
+
+    <div class="card-body">
+
+        <form method="post"
+              enctype="multipart/form-data">
+
+            <partial name="_ServiceForm"
+                     model="Model.createService" />
+
+        </form>
+
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

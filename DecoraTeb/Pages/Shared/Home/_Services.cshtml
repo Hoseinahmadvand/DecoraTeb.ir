@@ -1,0 +1,142 @@
+﻿@model List<DecoraTeb.ViewModels.Service.ServiceVm>
+
+<section class="section-pad bg-ivory blueprint-bg" id="services">
+
+    <div class="container">
+
+        <div class="text-center mb-5 reveal">
+            <span class="eyebrow justify-content-center d-inline-flex">
+                خدمات ما
+            </span>
+
+            <h2 class="mt-3">
+                هر تخصص، چیدمان و نور خودش را می‌خواهد
+            </h2>
+
+            <p class="text-secondary mx-auto" style="max-width:600px;">
+                از دندانپزشکی تا پوست و زیبایی، هر رشته پزشکی نیازهای فضایی متفاوتی دارد.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            @foreach (var item in Model.OrderBy(x => x.SortOrder))
+            {
+                <div class="col-lg-4 col-md-6 reveal">
+
+                    <a asp-page="/Services/Details"
+                       asp-route-slug="@item.Slug"
+                       class="text-decoration-none">
+
+                        <div class="service-card h-100">
+
+                           
+
+                            <div class="service-body">
+
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+
+                                    @* <div class="service-icon">
+
+                                        <i class="@item.Icon"></i>
+
+                                    </div> *@
+
+                                    <div class="service-num">
+
+                                        @item.SortOrder.ToString("00")
+
+                                    </div>
+
+                                </div>
+
+                                <h4>
+
+                                    @item.Title
+
+                                </h4>
+
+                                <p>
+
+                                    @item.ShortDescription
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+@* <section class="section-pad bg-ivory blueprint-bg" id="services">
+    <div class="container">
+        <div class="text-center mb-5 reveal">
+            <span class="eyebrow justify-content-center d-inline-flex">خدمات ما</span>
+            <h2 class="mt-3">هر تخصص، چیدمان و نور خودش را می‌خواهد</h2>
+            <p class="text-secondary mx-auto" style="max-width:600px;">از دندانپزشکی تا پوست و زیبایی، هر رشته پزشکی نیازهای فضایی متفاوتی دارد؛ ما این تفاوت را در طراحی لحاظ می‌کنیم.</p>
+        </div>
+        <div class="row g-4 card-3d-wrap">
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="service-card tilt-card">
+                    <div class="service-num">۰۱</div>
+                    <div class="service-icon"><i class="bi bi-emoji-smile"></i></div>
+                    <h4>طراحی مطب دندانپزشکی</h4>
+                    <p>چیدمان یونیت، اتاق رادیولوژی و مسیر استریل با اولویت گردش کار بی‌وقفه کادر درمان.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="service-card tilt-card">
+                    <div class="service-num">۰۲</div>
+                    <div class="service-icon"><i class="bi bi-flower1"></i></div>
+                    <h4>کلینیک پوست و زیبایی</h4>
+                    <p>نورپردازی نرم، مواد اولیه لوکس و اتاق‌های خصوصی برای تجربه‌ای آرام و قابل‌اعتماد.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="service-card tilt-card">
+                    <div class="service-num">۰۳</div>
+                    <div class="service-icon"><i class="bi bi-heart-pulse"></i></div>
+                    <h4>مطب عمومی و تخصصی</h4>
+                    <p>بهینه‌سازی متراژهای کوچک، فضای انتظار کارآمد و اتاق معاینه استاندارد.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="service-card tilt-card">
+                    <div class="service-num">۰۴</div>
+                    <div class="service-icon"><i class="bi bi-people"></i></div>
+                    <h4>طراحی اتاق انتظار</h4>
+                    <p>کاهش اضطراب بیمار با مبلمان راحت، مسیر دید مناسب و صدابندی محیط.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="service-card tilt-card">
+                    <div class="service-num">۰۵</div>
+                    <div class="service-icon"><i class="bi bi-lightbulb"></i></div>
+                    <h4>نورپردازی درمانی</h4>
+                    <p>ترکیب نور روز و مصنوعی برای دقت تشخیص پزشکی و آرامش بصری بیمار.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="service-card tilt-card">
+                    <div class="service-num">۰۶</div>
+                    <div class="service-icon"><i class="bi bi-compass"></i></div>
+                    <h4>مشاوره چیدمان و ارگونومی</h4>
+                    <p>بررسی نقشه موجود و پیشنهاد اصلاحات کم‌هزینه پیش از هر تصمیم اجرایی.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ *@

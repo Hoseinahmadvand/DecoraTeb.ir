@@ -1,4 +1,5 @@
-﻿namespace DecoraTeb.ViewModels.SiteSetting
+﻿
+namespace DecoraTeb.ViewModels.SiteSetting
 {
     public class SiteSettingVm
     {
@@ -41,6 +42,11 @@
         public string GoogleMap { get; set; }
 
         public bool IsOpen { get; set; }
+
+        public static implicit operator SiteSettingVm?(Data.Entities.SiteSetting? v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

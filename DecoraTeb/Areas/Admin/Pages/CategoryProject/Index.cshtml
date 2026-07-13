@@ -1,0 +1,122 @@
+﻿@page
+@model DecoraTeb.Areas.Admin.Pages.CategoryProject.IndexModel
+@{
+    ViewData["Title"] = "دسته بندی پروژه ها";
+}
+<button class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#createModal">
+    افزودن دسته بندی
+</button>
+
+
+<table class="table table-bordered align-middle">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>عنوان</th>
+            <th>ترتیب</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model.Categories)
+        {
+            <tr>
+
+                <td>@item.Id</td>
+
+                <td>@item.Title</td>
+
+                <td>@item.SortOrder</td>
+
+                <td>
+
+                    <button class="btn btn-warning btn-sm edit-btn"
+                            data-id="@item.Id"
+                            data-title="@item.Title"
+                            data-sort="@item.SortOrder"
+                            data-slug="@item.Slug"
+                            data-seotitle="@item.SeoTitle"
+                            data-seodescription="@item.SeoDescription"
+                            data-seokeywords="@item.SeoKeywords"
+                            data-canonical="@item.CanonicalUrl"
+                            data-robots="@item.Robots"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editModal">
+
+                        ویرایش
+
+                    </button>
+
+                    <form method="post"
+                          asp-page-handler="Delete"
+                          asp-route-id="@item.Id"
+                          class="d-inline">
+
+                        <button class="btn btn-danger btn-sm"
+                                onclick="return confirm('حذف شود؟')">
+
+                            حذف
+
+                        </button>
+
+                    </form>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+<partial name="_CreateOrEditModal"
+         model="Model.CreateModel"
+         view-data='new ViewDataDictionary(ViewData)
+         {
+             { "Handler","Create" },
+             { "ModalId","createModal" },
+             { "ModalTitle","افزودن دسته بندی" }
+         }' />
+<partial name="_CreateOrEditModal"
+         model="Model.UpdateModel"
+         view-data='new ViewDataDictionary(ViewData)
+         {
+             { "Handler","Edit" },
+             { "ModalId","editModal" },
+             { "ModalTitle","ویرایش دسته بندی" }
+         }' />
+
+@section Scripts {
+
+    <script>
+        document.querySelectorAll(".edit-btn").forEach(btn => {
+
+            btn.addEventListener("click", function () {
+
+                document.getElementById("UpdateModel_Id").value = this.dataset.id;
+
+                document.getElementById("UpdateModel_Title").value = this.dataset.title;
+
+                document.getElementById("UpdateModel_SortOrder").value = this.dataset.sort;
+
+                document.getElementById("UpdateModel_Slug").value = this.dataset.slug;
+
+                document.getElementById("UpdateModel_SeoTitle").value = this.dataset.seotitle;
+
+                document.getElementById("UpdateModel_SeoDescription").value = this.dataset.seodescription;
+
+                document.getElementById("UpdateModel_SeoKeywords").value = this.dataset.seokeywords;
+
+                document.getElementById("UpdateModel_CanonicalUrl").value = this.dataset.canonical;
+
+                document.getElementById("UpdateModel_Robots").value = this.dataset.robots;
+
+            });
+
+        });
+    </script>
+
+}

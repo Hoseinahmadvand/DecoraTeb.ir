@@ -1,0 +1,33 @@
+﻿@page
+@model DecoraTeb.Areas.Admin.Pages.Project.CreateModel
+
+@{
+    ViewData["Title"] = "افزودن پروژه";
+}
+
+<div class="card">
+
+    <div class="card-header">
+
+        <h4>افزودن پروژه</h4>
+
+    </div>
+
+    <div class="card-body">
+
+        <form method="post"
+              enctype="multipart/form-data">
+
+            <partial name="_ProjectForm"
+                     model="Model.Project" />
+
+        </form>
+
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

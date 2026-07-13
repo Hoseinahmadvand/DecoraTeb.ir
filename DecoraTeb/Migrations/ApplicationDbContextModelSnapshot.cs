@@ -126,6 +126,9 @@ namespace DecoraTeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -191,6 +194,9 @@ namespace DecoraTeb.Migrations
 
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -272,6 +278,9 @@ namespace DecoraTeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsAdmin")
                         .HasColumnType("bit");
 
@@ -298,6 +307,58 @@ namespace DecoraTeb.Migrations
                     b.ToTable("ConsultationRequests");
                 });
 
+            modelBuilder.Entity("DecoraTeb.Data.Entities.ContactUs", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsAnswered")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ContactUs");
+                });
+
             modelBuilder.Entity("DecoraTeb.Data.Entities.ContantRequest", b =>
                 {
                     b.Property<long>("Id")
@@ -319,6 +380,9 @@ namespace DecoraTeb.Migrations
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -393,9 +457,8 @@ namespace DecoraTeb.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<string>("Area")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Area")
+                        .HasColumnType("int");
 
                     b.Property<string>("CanonicalUrl")
                         .IsRequired()
@@ -422,6 +485,9 @@ namespace DecoraTeb.Migrations
                     b.Property<string>("ExecutionYear")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -463,10 +529,6 @@ namespace DecoraTeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Thumnail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -475,6 +537,8 @@ namespace DecoraTeb.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProjectCategoryId");
 
                     b.ToTable("Projects");
                 });
@@ -496,6 +560,9 @@ namespace DecoraTeb.Migrations
 
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -535,7 +602,7 @@ namespace DecoraTeb.Migrations
                     b.ToTable("ProjectCategories");
                 });
 
-            modelBuilder.Entity("DecoraTeb.Data.Entities.ProjectImsge", b =>
+            modelBuilder.Entity("DecoraTeb.Data.Entities.ProjectImage", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -557,6 +624,12 @@ namespace DecoraTeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsCover")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -575,7 +648,9 @@ namespace DecoraTeb.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProjectImsges");
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("ProjectImages");
                 });
 
             modelBuilder.Entity("DecoraTeb.Data.Entities.Service", b =>
@@ -601,10 +676,6 @@ namespace DecoraTeb.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Icon")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -691,6 +762,9 @@ namespace DecoraTeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -761,6 +835,10 @@ namespace DecoraTeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CanonicalUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime2");
 
@@ -781,7 +859,23 @@ namespace DecoraTeb.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("MobileImage")
+                    b.Property<string>("Robots")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SeoDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SeoKeywords")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SeoTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slug")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -852,6 +946,173 @@ namespace DecoraTeb.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Testimonials");
+                });
+
+            modelBuilder.Entity("DecoraTeb.Data.Entities.WebPage", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("BannerImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ButtonLink")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ButtonText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CanonicalUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Heading")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Robots")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SeoDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SeoKeywords")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SeoTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShortDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("ShowInMenu")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WebPages");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            BannerImage = "",
+                            ButtonLink = "",
+                            ButtonText = "",
+                            CanonicalUrl = "/aboutus",
+                            Content = "<p>محتوای صفحه درباره ما...</p>",
+                            CreateAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Heading = "",
+                            Image = "",
+                            IsActive = true,
+                            IsDeleted = false,
+                            Robots = "aboutus",
+                            SeoDescription = "آشنایی با مجموعه دکوراطب",
+                            SeoKeywords = "دکوراطب, طراحی داخلی مطب",
+                            SeoTitle = "درباره دکوراطب",
+                            ShortDescription = "آشنایی با مجموعه دکوراطب",
+                            ShowInMenu = false,
+                            Slug = "about",
+                            SortOrder = 1,
+                            Title = "درباره ما",
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            BannerImage = "",
+                            ButtonLink = "",
+                            ButtonText = "",
+                            CanonicalUrl = "/contact",
+                            Content = "<p>محتوای صفحه تماس با ما...</p>",
+                            CreateAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Heading = "",
+                            Image = "",
+                            IsActive = true,
+                            IsDeleted = false,
+                            Robots = "contact",
+                            SeoDescription = "راه های ارتباط با دکوراطب",
+                            SeoKeywords = "تماس, دکوراطب",
+                            SeoTitle = "تماس با دکوراطب",
+                            ShortDescription = "راه های ارتباط با دکوراطب",
+                            ShowInMenu = false,
+                            Slug = "contact",
+                            SortOrder = 2,
+                            Title = "تماس با ما",
+                            Type = 3
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            BannerImage = "",
+                            ButtonLink = "",
+                            ButtonText = "",
+                            CanonicalUrl = "/privacy",
+                            Content = "<p>متن حریم خصوصی...</p>",
+                            CreateAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Heading = "",
+                            Image = "",
+                            IsActive = true,
+                            IsDeleted = false,
+                            Robots = "privacy",
+                            SeoDescription = "حریم خصوصی کاربران",
+                            SeoKeywords = "حریم خصوصی",
+                            SeoTitle = "حریم خصوصی",
+                            ShortDescription = "حفظ اطلاعات کاربران",
+                            ShowInMenu = false,
+                            Slug = "privacy",
+                            SortOrder = 4,
+                            Title = "حریم خصوصی",
+                            Type = 4
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -987,6 +1248,28 @@ namespace DecoraTeb.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("DecoraTeb.Data.Entities.Project", b =>
+                {
+                    b.HasOne("DecoraTeb.Data.Entities.ProjectCategory", "Category")
+                        .WithMany()
+                        .HasForeignKey("ProjectCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("DecoraTeb.Data.Entities.ProjectImage", b =>
+                {
+                    b.HasOne("DecoraTeb.Data.Entities.Project", "Project")
+                        .WithMany("Images")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1036,6 +1319,11 @@ namespace DecoraTeb.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DecoraTeb.Data.Entities.Project", b =>
+                {
+                    b.Navigation("Images");
                 });
 #pragma warning restore 612, 618
         }

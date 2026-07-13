@@ -1,0 +1,280 @@
+﻿
+@page
+@model DecoraTeb.Areas.Admin.Pages.Testimonial.IndexModel
+
+@{
+    ViewData["Title"] = "نظرات مشتریان";
+}
+
+<div class="card shadow-sm">
+
+    <div class="card-header d-flex justify-content-between align-items-center">
+
+        <h5 class="mb-0">
+            نظرات مشتریان
+        </h5>
+
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-hover table-bordered align-middle">
+
+            <thead class="table-light">
+
+            <tr>
+
+                <th width="70">تصویر</th>
+
+                <th>نام</th>
+
+                <th>سمت</th>
+
+                <th width="100">امتیاز</th>
+
+                <th>نظر</th>
+
+                <th width="90">وضعیت</th>
+
+                <th width="170">عملیات</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            @foreach (var item in Model.Testimonials)
+            {
+
+                <tr>
+
+                    <td>
+
+                        <img src="/uploads/testimonials/@item.Image"
+                             class="rounded"
+                             width="60"
+                             height="60"
+                             style="object-fit:cover;" />
+
+                    </td>
+
+                    <td>
+
+                        @item.FullName
+
+                    </td>
+
+                    <td>
+
+                        @item.JobTitle
+
+                    </td>
+
+                    <td>
+
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            if (i <= item.Rate)
+                            {
+                                <i class="bi bi-star-fill text-warning"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-star text-secondary"></i>
+                            }
+                        }
+
+                    </td>
+
+                    <td>
+
+                        @(item.Comment.Length > 60
+                            ? item.Comment.Substring(0,60)+"..."
+                            : item.Comment)
+
+                    </td>
+
+                    <td>
+
+                        @if(item.IsActive)
+                        {
+                            <span class="badge bg-success">
+                                فعال
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">
+                                غیرفعال
+                            </span>
+                        }
+
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="btn btn-info btn-sm btnView"
+
+                            data-name="@item.FullName"
+
+                            data-job="@item.JobTitle"
+
+                            data-comment="@item.Comment"
+
+                            data-rate="@item.Rate"
+
+                            data-image="@item.Image">
+
+                            مشاهده
+
+                        </button>
+
+                        <form method="post"
+                              asp-page-handler="Toggle"
+                              class="d-inline">
+
+                            <input type="hidden"
+                                   name="id"
+                                   value="@item.Id"/>
+
+                            <button class="btn btn-warning btn-sm">
+
+                                @(item.IsActive ? "غیرفعال" : "فعال")
+
+                            </button>
+
+                        </form>
+
+                        <form method="post"
+                              asp-page-handler="Delete"
+                              class="d-inline">
+
+                            <input type="hidden"
+                                   name="id"
+                                   value="@item.Id"/>
+
+                            <button class="btn btn-danger btn-sm btnDelete">
+
+                                حذف
+
+                            </button>
+
+                        </form>
+
+                    </td>
+
+                </tr>
+
+            }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<div class="modal fade"
+     id="viewModal">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    مشاهده نظر
+
+                </h5>
+
+                <button class="btn-close"
+                        data-bs-dismiss="modal"></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="text-center mb-3">
+
+                    <img id="imgUser"
+                         width="90"
+                         class="rounded-circle"/>
+
+                </div>
+
+                <h5 id="txtName"></h5>
+
+                <p id="txtJob"></p>
+
+                <div id="txtRate" class="mb-3"></div>
+
+                <hr/>
+
+                <p id="txtComment"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Scripts{
+
+<script>
+
+document.querySelectorAll(".btnView").forEach(btn=>{
+
+btn.onclick=function(){
+
+document.getElementById("imgUser").src="/uploads/testimonials/"+this.dataset.image;
+
+document.getElementById("txtName").innerText=this.dataset.name;
+
+document.getElementById("txtJob").innerText=this.dataset.job;
+
+document.getElementById("txtComment").innerText=this.dataset.comment;
+
+let stars='';
+
+for(let i=1;i<=5;i++){
+
+stars+=i<=this.dataset.rate
+
+?'<i class="bi bi-star-fill text-warning"></i>'
+
+:'<i class="bi bi-star text-secondary"></i>';
+
+}
+
+document.getElementById("txtRate").innerHTML=stars;
+
+new bootstrap.Modal(document.getElementById("viewModal")).show();
+
+}
+
+});
+
+document.querySelectorAll(".btnDelete").forEach(btn=>{
+
+btn.onclick=function(e){
+
+if(!confirm("آیا از حذف این نظر مطمئن هستید؟"))
+
+e.preventDefault();
+
+}
+
+});
+
+</script>
+
+}

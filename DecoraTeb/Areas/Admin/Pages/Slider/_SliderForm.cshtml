@@ -1,0 +1,246 @@
+﻿@using DecoraTeb.ViewModels.Slider
+@model SliderFormVm
+
+<input asp-for="Id" type="hidden" />
+
+<div class="row">
+
+    <div class="col-lg-8">
+
+        <div class="card mb-4">
+
+            <div class="card-header">
+
+                اطلاعات اسلایدر
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="mb-3">
+
+                    <label asp-for="Title"></label>
+
+                    <input asp-for="Title" class="form-control" />
+
+                    <span asp-validation-for="Title" class="text-danger"></span>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="SubTitle"></label>
+
+                    <input asp-for="SubTitle" class="form-control" />
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Description"></label>
+
+                    <textarea asp-for="Description"
+                              rows="5"
+                              class="form-control"></textarea>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-header">
+
+                تنظیمات سئو
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="mb-3">
+
+                    <label asp-for="Slug"></label>
+
+                    <input asp-for="Slug"
+                           class="form-control" />
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="SeoTitle"></label>
+
+                    <input asp-for="SeoTitle"
+                           class="form-control" />
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="SeoDescription"></label>
+
+                    <textarea asp-for="SeoDescription"
+                              class="form-control"></textarea>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="SeoKeywords"></label>
+
+                    <textarea asp-for="SeoKeywords"
+                              class="form-control"></textarea>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="CanonicalUrl"></label>
+
+                    <input asp-for="CanonicalUrl"
+                           class="form-control" />
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Robots"></label>
+
+                    <input asp-for="Robots"
+                           class="form-control" />
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="col-lg-4">
+
+        <div class="card mb-4">
+
+            <div class="card-header">
+
+                تصاویر
+
+            </div>
+
+            <div class="card-body">
+
+                @if (!string.IsNullOrWhiteSpace(Model.Image))
+                {
+                    <img src="~/uploads/slider/@Model.Image"
+                         class="img-fluid rounded mb-3" />
+                }
+
+                <label asp-for="ImageFile"></label>
+
+                <input asp-for="ImageFile"
+                       class="form-control" />
+
+                <hr />
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card mb-4">
+
+            <div class="card-header">
+
+                دکمه
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="mb-3">
+
+                    <label asp-for="ButtonText"></label>
+
+                    <input asp-for="ButtonText"
+                           class="form-control" />
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="ButtonLink"></label>
+
+                    <input asp-for="ButtonLink"
+                           class="form-control" />
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-header">
+
+                تنظیمات
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="mb-3">
+
+                    <label asp-for="SortOrder"></label>
+
+                    <input asp-for="SortOrder"
+                           class="form-control" />
+
+                </div>
+
+                <div class="form-check">
+
+                    <input asp-for="IsActive"
+                           class="form-check-input" />
+
+                    <label asp-for="IsActive"
+                           class="form-check-label"></label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="mt-4">
+
+    <button class="btn btn-success">
+
+        <i class="bi bi-check-lg"></i>
+
+        ذخیره اطلاعات
+
+    </button>
+
+    <a asp-page="Index"
+       class="btn btn-secondary">
+
+        بازگشت
+
+    </a>
+
+</div>

@@ -1,0 +1,33 @@
+﻿@page "{id:long}"
+@model DecoraTeb.Areas.Admin.Pages.Slider.EditModel
+
+@{
+    ViewData["Title"] = "ویرایش اسلایدر";
+}
+
+<div class="card">
+
+    <div class="card-header">
+
+        <h4>ویرایش اسلایدر</h4>
+
+    </div>
+
+    <div class="card-body">
+
+        <form method="post"
+              enctype="multipart/form-data">
+
+            <partial name="_SliderForm"
+                     model="Model.Slider"/>
+
+        </form>
+
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"/>
+}

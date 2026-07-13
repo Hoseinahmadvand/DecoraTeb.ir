@@ -1,0 +1,127 @@
+﻿@page "{id:int}"
+@model DecoraTeb.Areas.Admin.Pages.WebPage.EditModel
+
+@{
+    ViewData["Title"] = "ویرایش صفحه";
+}
+
+<form method="post">
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h3>ویرایش صفحه</h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <label>عنوان</label>
+
+                    <input asp-for="PageVm.Title" class="form-control" />
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <label>ترتیب نمایش</label>
+
+                    <input asp-for="PageVm.SortOrder" class="form-control" />
+
+                </div>
+
+                <div class="col-md-12 mt-3">
+
+                    <label>توضیح کوتاه</label>
+
+<textarea asp-for="PageVm.Description"
+          class="form-control"
+          rows="3"></textarea>
+
+                </div>
+
+                <div class="col-md-12 mt-3">
+
+                    <label>محتوا</label>
+
+<textarea asp-for="PageVm.Content"
+          id="editor"
+          class="form-control"
+          rows="12"></textarea>
+
+                </div>
+
+                <hr class="my-4" />
+
+                <div class="col-md-6">
+
+                    <label>Slug</label>
+
+                    <input asp-for="PageVm.Slug" class="form-control" />
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <label>Seo Title</label>
+
+                    <input asp-for="PageVm.SeoTitle" class="form-control" />
+
+                </div>
+
+                <div class="col-md-6 mt-3">
+
+                    <label>Seo Description</label>
+
+<textarea asp-for="PageVm.SeoDescription"
+          class="form-control"></textarea>
+
+                </div>
+
+                <div class="col-md-6 mt-3">
+
+                    <label>Seo Keywords</label>
+
+<textarea asp-for="PageVm.SeoKeywords"
+          class="form-control"></textarea>
+
+                </div>
+
+                <div class="col-md-12 mt-3">
+
+                    <label>Canonical Url</label>
+
+                    <input asp-for="PageVm.CanonicalUrl"
+                           class="form-control" />
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card-footer">
+
+            <button class="btn btn-success">
+
+                ذخیره تغییرات
+
+            </button>
+
+            <a asp-page="Index"
+               class="btn btn-secondary">
+
+                بازگشت
+
+            </a>
+
+        </div>
+
+    </div>
+
+</form>

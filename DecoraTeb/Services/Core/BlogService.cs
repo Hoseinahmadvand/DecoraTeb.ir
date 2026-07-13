@@ -31,6 +31,10 @@ public class BlogService : CrudService<Blog>, IBlogService
             .Select(x => new BlogListItemVm
             {
                 Id = x.Id,
+                Slug = x.Slug,
+                Summary=x.Summery,
+                Author=x.Author,
+                ReadingTime=x.ReadingTime,
                 Title = x.Title,
                 Image = x.Image,
                 PublishDate = x.PublishDate,

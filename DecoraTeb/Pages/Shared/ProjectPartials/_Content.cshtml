@@ -1,0 +1,54 @@
+﻿@using DecoraTeb.ViewModels.Project
+@model ProjectDetailVm
+
+<section class="section-pad">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <div class="col-lg-8">
+
+                @Html.Raw(Model.Description)
+
+                <hr class="my-5" />
+
+                <h3 class="mb-4">
+
+                    گالری تصاویر
+
+                </h3>
+
+                <div class="row g-3">
+
+                    @foreach (var image in Model.Gallery)
+                    {
+                        <div class="col-md-6">
+
+                            <a href="/uploads/project/@Model.Title/@image.Image"
+                               data-fancybox="gallery">
+
+                                <img src="/uploads/project/@Model.Title/@image.Image"
+                                     class="img-fluid rounded-4"
+                                     alt="@image.Alt">
+
+                            </a>
+
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <partial name="Shared/ProjectPartials/_Sidebar" model="Model" />
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

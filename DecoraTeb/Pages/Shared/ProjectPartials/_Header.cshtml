@@ -1,0 +1,52 @@
+﻿@using DecoraTeb.ViewModels.Project
+@model ProjectDetailVm
+
+<section class="page-header blueprint-bg-dark">
+
+    <div class="container">
+
+        <nav class="page-crumb">
+
+            <a asp-page="/Index">خانه</a>
+
+            <span class="sep">/</span>
+
+            <a asp-page="/Projects/Index">پروژه ها</a>
+
+            <span class="sep">/</span>
+
+            <span>@Model.Title</span>
+
+        </nav>
+
+        <h1 class="detail-title-lg">@Model.Title</h1>
+
+        <p>@Model.Summary</p>
+
+        <div class="mt-3">
+
+            <span class="meta-chip">
+                <i class="bi bi-tag"></i>
+                @Model.Category
+            </span>
+
+            <span class="meta-chip">
+                <i class="bi bi-geo-alt"></i>
+                @Model.Location
+            </span>
+
+            <span class="meta-chip">
+                <i class="bi bi-rulers"></i>
+                @Model.Area متر مربع
+            </span>
+
+            <span class="meta-chip">
+                <i class="bi bi-calendar3"></i>
+                @Model.ExecutionYear
+            </span>
+
+        </div>
+
+    </div>
+
+</section>

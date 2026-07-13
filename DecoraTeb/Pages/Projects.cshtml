@@ -2,3 +2,346 @@
 @model DecoraTeb.Pages.ProjectsModel
 @{
 }
+
+<!-- ===== PAGE HEADER ===== -->
+
+<section class="page-header blueprint-bg-dark">
+
+    <div class="container">
+
+        <nav class="page-crumb">
+
+            <a asp-page="/Index">خانه</a>
+
+            <span class="sep">/</span>
+
+            <span>پروژه ها</span>
+
+        </nav>
+
+        <h1>
+            نمونه‌کارهایی که با دقت پزشکی طراحی شده‌اند
+        </h1>
+
+        <p>
+            مجموعه‌ای از مطب‌ها و کلینیک‌هایی که از صفر تا تحویل کلید،
+            توسط تیم دکوراطب طراحی و اجرا شده‌اند.
+        </p>
+
+    </div>
+
+    <div class="hs-shape">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+            <path d="M0,30 C280,80 500,0 760,22 C1040,46 1200,8 1440,38 L1440,70 L0,70 Z"
+                  fill="#fbf8f2">
+            </path>
+        </svg>
+    </div>
+
+</section>
+
+<!-- ===== PROJECTS ===== -->
+
+<section class="section-pad">
+
+    <div class="container">
+
+        <div class="d-flex justify-content-center filter-pills mb-5 flex-wrap">
+
+            <button class="btn active"
+                    data-filter="all">
+
+                همه پروژه‌ها
+
+            </button>
+
+            @foreach (var item in Model.Projects.Categories)
+            {
+                <button class="btn"
+                        data-filter="@item.Slug">
+
+                    @item.Title
+
+                </button>
+            }
+
+        </div>
+
+        <div class="row g-4" id="projectGrid">
+
+            @foreach (var item in Model.Projects.Projects)
+            {
+                <div class="col-lg-4 col-md-6 project-item reveal"
+                     data-cat="@item.CategoryTitle">
+
+                    <a asp-page="/ProjectDetail"
+                       asp-route-slug="@item.Slug"
+                       class="text-decoration-none">
+
+                        <div class="project-card">
+
+                            <div class="project-visual">
+
+                                @if (!string.IsNullOrWhiteSpace(item.CoverImage))
+                                {
+                                    <img src="/uploads/projects/@item.CoverImage"
+                                         alt="@item.Title"
+                                         class="img-fluid w-100 h-100 object-fit-cover" />
+                                }
+                                else
+                                {
+                                    <div class="project-placeholder">
+
+                                        <i class="bi bi-image"></i>
+
+                                    </div>
+                                }
+
+                            </div>
+
+                            <div class="project-overlay">
+
+                                <span class="project-tag">
+
+                                    @item.CategoryTitle
+
+                                </span>
+
+                                <h5 class="mb-2">
+
+                                    @item.Title
+
+                                </h5>
+
+                                <div class="small opacity-75 mb-2">
+
+                                    <i class="bi bi-geo-alt"></i>
+
+                                    @item.Location
+
+                                </div>
+
+                                @if (item.Area > 0)
+                                {
+                                    <div class="small opacity-75">
+
+                                        <i class="bi bi-rulers"></i>
+
+                                        @item.Area متر مربع
+
+                                    </div>
+                                }
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                </div>
+            }
+
+        </div>
+
+        @if (Model.Projects.Projects.Count >= 9)
+        {
+            <div class="text-center mt-5">
+
+                <button class="btn btn-loadmore"
+                        id="loadMoreBtn">
+
+                    مشاهده پروژه‌های بیشتر
+
+                    <i class="bi bi-arrow-down ms-1"></i>
+
+                </button>
+
+            </div>
+        }
+
+    </div>
+
+</section>
+
+<!-- ===== CTA ===== -->
+
+<section class="pb-5">
+
+    <div class="container">
+
+        <div class="cta-band reveal">
+
+            <div class="row align-items-center position-relative">
+
+                <div class="col-lg-8">
+
+                    <h2 class="mb-2">
+
+                        پروژه بعدی، مطب شماست
+
+                    </h2>
+
+                    <p class="mb-0 opacity-75">
+
+                        همین امروز وقت بازدید رایگان بگیرید و مسیر تبدیل فضای‌تان را شروع کنید.
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 text-lg-start mt-4 mt-lg-0">
+
+                    <a asp-page="/Contact"
+                       class="btn btn-copper w-100">
+
+                        رزرو وقت مشاوره
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+@* <!-- ===== PAGE HEADER ===== -->
+<section class="page-header blueprint-bg-dark">
+    <div class="container">
+        <nav class="page-crumb">
+            <a href="dekoratebb.html">خانه</a> <span class="sep">/</span> <span>پروژه‌ها</span>
+        </nav>
+        <h1>نمونه‌کارهایی که با دقت پزشکی طراحی شده‌اند</h1>
+        <p>مجموعه‌ای از مطب‌ها و کلینیک‌هایی که از صفر تا تحویل کلید، توسط تیم دکوراطب طراحی و اجرا شده‌اند.</p>
+    </div>
+    <div class="hs-shape"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,30 C280,80 500,0 760,22 C1040,46 1200,8 1440,38 L1440,70 L0,70 Z" fill="#fbf8f2"></path></svg></div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="section-pad">
+    <div class="container">
+        <div class="d-flex justify-content-center filter-pills mb-5 flex-wrap">
+            <button class="btn active" data-filter="all">همه پروژه‌ها</button>
+            <button class="btn" data-filter="dental">دندانپزشکی</button>
+            <button class="btn" data-filter="skin">پوست و زیبایی</button>
+            <button class="btn" data-filter="general">مطب عمومی</button>
+            <button class="btn" data-filter="waiting">اتاق انتظار</button>
+        </div>
+
+        <div class="row g-4" id="projectGrid">
+            <div class="col-md-6 col-lg-4 project-item reveal" data-cat="dental">
+                <div class="project-card">
+                    <div class="project-visual" style="background:linear-gradient(135deg,var(--forest),var(--forest-light));"></div>
+                    <div class="project-overlay">
+                        <span class="project-tag">دندانپزشکی</span>
+                        <h5 class="mb-1">کلینیک دندانپزشکی آراد</h5>
+                        <div class="small opacity-75">تهران، ۱۲۰ متر مربع</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 project-item reveal" data-cat="skin">
+                <div class="project-card">
+                    <div class="project-visual" style="background:linear-gradient(135deg,var(--copper),var(--gold));"></div>
+                    <div class="project-overlay">
+                        <span class="project-tag">پوست و زیبایی</span>
+                        <h5 class="mb-1">کلینیک زیبایی نگاره</h5>
+                        <div class="small opacity-75">اصفهان، ۹۰ متر مربع</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 project-item reveal" data-cat="general">
+                <div class="project-card">
+                    <div class="project-visual" style="background:linear-gradient(135deg,var(--sage),var(--forest-light));"></div>
+                    <div class="project-overlay">
+                        <span class="project-tag">مطب عمومی</span>
+                        <h5 class="mb-1">مطب دکتر رستمی</h5>
+                        <div class="small opacity-75">شیراز، ۶۵ متر مربع</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 project-item reveal" data-cat="dental">
+                <div class="project-card">
+                    <div class="project-visual" style="background:linear-gradient(135deg,#173a30,var(--forest));"></div>
+                    <div class="project-overlay">
+                        <span class="project-tag">دندانپزشکی</span>
+                        <h5 class="mb-1">کلینیک دندان سفید</h5>
+                        <div class="small opacity-75">مشهد، ۱۴۰ متر مربع</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 project-item reveal" data-cat="skin">
+                <div class="project-card">
+                    <div class="project-visual" style="background:linear-gradient(135deg,var(--gold),var(--copper-light));"></div>
+                    <div class="project-overlay">
+                        <span class="project-tag">پوست و زیبایی</span>
+                        <h5 class="mb-1">استودیو پوست لمیا</h5>
+                        <div class="small opacity-75">تهران، ۷۵ متر مربع</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 project-item reveal" data-cat="general">
+                <div class="project-card">
+                    <div class="project-visual" style="background:linear-gradient(135deg,var(--forest-light),var(--sage));"></div>
+                    <div class="project-overlay">
+                        <span class="project-tag">مطب عمومی</span>
+                        <h5 class="mb-1">مرکز درمانی سلامت</h5>
+                        <div class="small opacity-75">کرج، ۲۰۰ متر مربع</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 project-item reveal" data-cat="waiting">
+                <div class="project-card">
+                    <div class="project-visual" style="background:linear-gradient(135deg,var(--copper),#7a4c26);"></div>
+                    <div class="project-overlay">
+                        <span class="project-tag">اتاق انتظار</span>
+                        <h5 class="mb-1">اتاق انتظار کلینیک آفتاب</h5>
+                        <div class="small opacity-75">تبریز، ۵۰ متر مربع</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 project-item reveal" data-cat="waiting">
+                <div class="project-card">
+                    <div class="project-visual" style="background:linear-gradient(135deg,var(--gold),#8a6a2f);"></div>
+                    <div class="project-overlay">
+                        <span class="project-tag">اتاق انتظار</span>
+                        <h5 class="mb-1">لابی کلینیک دیبا</h5>
+                        <div class="small opacity-75">تهران، ۴۰ متر مربع</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 project-item reveal" data-cat="dental">
+                <div class="project-card">
+                    <div class="project-visual" style="background:linear-gradient(135deg,#1f4b3f,#a9bfae);"></div>
+                    <div class="project-overlay">
+                        <span class="project-tag">دندانپزشکی</span>
+                        <h5 class="mb-1">مطب دکتر یزدانی</h5>
+                        <div class="small opacity-75">اهواز، ۸۵ متر مربع</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-loadmore mt-4" id="loadMoreBtn">مشاهده پروژه‌های بیشتر <i class="bi bi-arrow-down ms-1"></i></button>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="pb-5">
+    <div class="container">
+        <div class="cta-band reveal">
+            <div class="row align-items-center position-relative">
+                <div class="col-lg-8">
+                    <h2 class="mb-2">پروژه بعدی، مطب شماست</h2>
+                    <p class="mb-0 opacity-75">همین امروز وقت بازدید رایگان بگیرید و مسیر تبدیل فضای‌تان را شروع کنید.</p>
+                </div>
+                <div class="col-lg-4 text-lg-start mt-4 mt-lg-0">
+                    <a href="contact.html" class="btn btn-copper w-100">رزرو وقت مشاوره</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> *@

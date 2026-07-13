@@ -1,0 +1,171 @@
+﻿@model List<DecoraTeb.ViewModels.Blog.BlogListItemVm>
+
+
+<section class="section-pad" id="blog">
+
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3 reveal">
+
+            <div>
+
+                <span class="eyebrow d-inline-flex">
+
+                    بلاگ دکوراطب
+
+                </span>
+
+                <h2 class="mt-3 mb-0">
+
+                    راهنمای طراحی فضای درمانی
+
+                </h2>
+
+            </div>
+
+            <a asp-page="/Blogs/Index"
+               class="btn btn-outline-forest">
+
+                مشاهده همه مقالات
+
+            </a>
+
+        </div>
+
+        <div class="swipe-hint">
+
+            <i class="bi bi-hand-index-thumb"></i>
+
+            برای مطالعه مقالات بیشتر، بکشید
+
+        </div>
+
+        <div class="row g-4 mobile-slider">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 reveal">
+
+                    <article class="blog-card">
+
+                        <a asp-page="/Blogs/Details"
+                           asp-route-slug="@item.Slug"
+                           class="text-decoration-none">
+
+                            <div class="blog-thumb">
+
+                                @if (!string.IsNullOrWhiteSpace(item.Image))
+                                {
+                                    <img src="/uploads/blogs/@item.Image"
+                                         alt="@item.Title">
+                                }
+
+                                <span class="blog-cat">
+
+                                    @item.BlogCategoryId
+
+                                </span>
+
+                            </div>
+
+                            <div class="blog-body">
+
+                                <div class="blog-meta mb-2">
+
+                                    <i class="bi bi-calendar3 me-1"></i>
+
+                                    @item.PublishDate
+
+                                </div>
+
+                                <h5>
+
+                                    @item.Title
+
+                                </h5>
+
+                                <p>
+
+                                    @item.Summary
+
+                                </p>
+
+                                <span class="text-forest fw-bold">
+
+                                    ادامه مطلب
+
+                                    <i class="bi bi-arrow-left"></i>
+
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+@* 
+
+<section class="section-pad" id="blog">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3 reveal">
+            <div>
+                <span class="eyebrow d-inline-flex">بلاگ دکوراطب</span>
+                <h2 class="mt-3 mb-0">راهنمای طراحی فضای درمانی</h2>
+            </div>
+            <a href="#" class="btn btn-outline-forest">مشاهده همه مقالات</a>
+        </div>
+        <div class="swipe-hint"><i class="bi bi-hand-index-thumb"></i> برای مطالعه مقالات بیشتر، بکشید</div>
+        <div class="row g-4 mobile-slider">
+            <div class="col-md-4 reveal">
+                <div class="blog-card">
+                    <div class="blog-thumb"><span class="blog-cat">نورپردازی</span></div>
+                    <div class="blog-body">
+                        <div class="blog-meta mb-2"><i class="bi bi-calendar3 me-1"></i> ۱۸ تیر ۱۴۰۴</div>
+                        <h5>۷ اصل نورپردازی اتاق معاینه که کمتر کسی می‌داند</h5>
+                        <p>تفاوت نور تشخیصی و نور آرامش‌بخش و نحوه ترکیب درست آن‌ها.</p>
+                        <a href="#" class="text-forest fw-bold text-decoration-none">ادامه مطلب <i class="bi bi-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 reveal">
+                <div class="blog-card">
+                    <div class="blog-thumb"><span class="blog-cat">چیدمان</span></div>
+                    <div class="blog-body">
+                        <div class="blog-meta mb-2"><i class="bi bi-calendar3 me-1"></i> ۵ تیر ۱۴۰۴</div>
+                        <h5>چگونه مسیر حرکت بیمار را کوتاه‌تر و امن‌تر کنیم</h5>
+                        <p>اصول ترافیک داخلی برای کلینیک‌های شلوغ و کم‌متراژ.</p>
+                        <a href="#" class="text-forest fw-bold text-decoration-none">ادامه مطلب <i class="bi bi-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 reveal">
+                <div class="blog-card">
+                    <div class="blog-thumb"><span class="blog-cat">متریال</span></div>
+                    <div class="blog-body">
+                        <div class="blog-meta mb-2"><i class="bi bi-calendar3 me-1"></i> ۲۲ خرداد ۱۴۰۴</div>
+                        <h5>راهنمای انتخاب کفپوش ضدعفونی‌پذیر برای مطب</h5>
+                        <p>مقایسه متریال‌های رایج از نظر دوام، بهداشت و هزینه.</p>
+                        <a href="#" class="text-forest fw-bold text-decoration-none">ادامه مطلب <i class="bi bi-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ *@

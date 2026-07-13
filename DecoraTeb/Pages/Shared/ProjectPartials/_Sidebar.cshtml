@@ -1,0 +1,66 @@
+﻿@using DecoraTeb.ViewModels.Project
+@model ProjectDetailVm
+
+<div class="sidebar-card">
+
+    <h5 class="mb-4">
+
+        مشخصات پروژه
+
+    </h5>
+
+    <div class="sidebar-row">
+
+        <span>کارفرما</span>
+
+        <span>@Model.ClientName</span>
+
+    </div>  
+    <div class="sidebar-row">
+
+        <span>مجری طرح</span>
+
+        <span>گروه دکوراطب</span>
+
+    </div>
+
+    <div class="sidebar-row">
+
+        <span>شهر</span>
+
+        <span>@Model.Location</span>
+
+    </div>
+
+    <div class="sidebar-row">
+
+        <span>متراژ</span>
+
+        <span>@Model.Area متر</span>
+
+    </div>
+
+    <div class="sidebar-row">
+
+        <span>سال اجرا</span>
+
+        <span>@Model.ExecutionYear</span>
+
+    </div>
+
+    <div class="sidebar-row">
+
+        <span>دسته بندی</span>
+
+        <span>@Model.Category</span>
+
+    </div>
+
+    <a asp-page="/Contact"
+       class="btn btn-copper w-100 mt-4">
+
+        درخواست مشاوره
+
+    </a>
+
+</div>

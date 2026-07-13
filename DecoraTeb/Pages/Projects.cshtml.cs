@@ -1,12 +1,22 @@
-using Microsoft.AspNetCore.Mvc;
+using DecoraTeb.Services.Interfaces.Core;
+using DecoraTeb.ViewModels;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace DecoraTeb.Pages
+namespace DecoraTeb.Pages;
+
+public class ProjectsModel : PageModel
 {
-    public class ProjectsModel : PageModel
+    private readonly IProjectService _projectService;
+
+    public HomeProjectVm Projects { get; set; } = new();
+
+    public ProjectsModel(IProjectService projectService)
     {
-        public void OnGet()
-        {
-        }
+        _projectService = projectService;
+    }
+
+    public async Task OnGet()
+    {
+        Projects = await _projectService.GetHomeProjectsAsync();
     }
 }

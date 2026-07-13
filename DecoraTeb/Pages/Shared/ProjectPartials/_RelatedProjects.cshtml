@@ -1,0 +1,70 @@
+﻿@using DecoraTeb.ViewModels.Project
+@model ProjectDetailVm
+
+<section class="section-pad bg-ivory">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2>
+
+                پروژه های مشابه
+
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            @foreach (var item in Model.RelatedProjects)
+            {
+                <div class="col-md-4">
+
+                    <a asp-page="/ProjectDetail"
+                       asp-route-slug="@item.Slug"
+                       class="text-decoration-none">
+
+                        <div class="project-card">
+
+                            <img src="/uploads/projects/@item.CoverImage"
+                                 class="img-fluid rounded-4">
+
+                            <div class="project-overlay">
+
+                                <span class="project-tag">
+
+                                    @item.CategoryName
+
+                                </span>
+
+                                <h5>
+
+                                    @item.Title
+
+                                </h5>
+
+                                <small>
+
+                                    @item.Location
+
+                                    |
+
+                                    @item.Area متر
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</section>

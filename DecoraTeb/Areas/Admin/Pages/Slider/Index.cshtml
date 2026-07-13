@@ -1,0 +1,126 @@
+﻿@page
+@model DecoraTeb.Areas.Admin.Pages.Slider.IndexModel
+
+
+@{
+    ViewData["Title"] = "مدیریت اسلایدر";
+}
+
+<div class="card col-12">
+
+    <div class="card-header d-flex justify-content-between">
+
+        <h4>مدیریت اسلایدر</h4>
+
+        <a asp-page="Create"
+           class="btn btn-success">
+
+            <i class="bi bi-plus-lg"></i>
+
+            اسلاید جدید
+
+        </a>
+
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+
+            <tr>
+
+                <th width="120">تصویر</th>
+
+                <th>عنوان</th>
+
+                <th>ترتیب</th>
+
+                <th>وضعیت</th>
+
+                <th width="180"></th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            @foreach (var item in Model.Sliders)
+            {
+                <tr>
+
+                    <td>
+
+                        <img src="~/uploads/slider/@item.Image"
+                             width="100"
+                             class="rounded"/>
+
+                    </td>
+
+                    <td>
+
+                        @item.Title
+
+                    </td>
+
+                    <td>
+
+                        @item.SortOrder
+
+                    </td>
+
+                    <td>
+
+                        @if(item.IsActive)
+                        {
+                            <span class="badge bg-success">
+                                فعال
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">
+                                غیرفعال
+                            </span>
+                        }
+
+                    </td>
+
+                    <td>
+
+                        <a asp-page="Edit"
+                           asp-route-id="@item.Id"
+                           class="btn btn-warning btn-sm">
+
+                            ویرایش
+
+                        </a>
+
+                        <form method="post"
+                              asp-page-handler="Delete"
+                              asp-route-id="@item.Id"
+                              class="d-inline">
+
+                            <button class="btn btn-danger btn-sm"
+                                    onclick="return confirm('حذف شود؟')">
+
+                                حذف
+
+                            </button>
+
+                        </form>
+
+                    </td>
+
+                </tr>
+            }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

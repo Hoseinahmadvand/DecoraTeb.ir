@@ -1,4 +1,6 @@
-﻿namespace DecoraTeb.ViewModels;
+﻿using DecoraTeb.Data.Entities;
+
+namespace DecoraTeb.ViewModels;
 
 public class SeoVm
 {

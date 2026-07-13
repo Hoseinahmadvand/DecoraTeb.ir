@@ -1,0 +1,103 @@
+﻿@using DecoraTeb.ViewModels.Service
+@model ServiceFormVm
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<div class="row">
+<div class="col-6">
+
+
+<div class="mb-3">
+    <label asp-for="Title" class="form-label">عنوان</label>
+    <input asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Icon" class="form-label">آیکون</label>
+    <input asp-for="Icon" class="form-control" />
+    <span asp-validation-for="Icon" class="text-danger"></span>
+</div>
+
+
+<div class="mb-3">
+    <label asp-for="ShortDescription" class="form-label">توضیحات کوتاه</label>
+    <textarea asp-for="ShortDescription" class="form-control" rows="3"></textarea>
+</div>
+
+
+<div class="mb-3">
+    <label asp-for="Description" class="form-label">توضیحات</label>
+    <textarea asp-for="Description" class="form-control" rows="6"></textarea>
+</div>
+
+<div class="mb-3">
+    <label asp-for="SortOrder" class="form-label">اولویت</label>
+    <input asp-for="SortOrder" class="form-control">
+</div>
+
+
+
+<div class="form-check mb-4">
+
+    <input asp-for="IsActive"
+           class="form-check-input" />
+
+    <label asp-for="IsActive"
+           class="form-check-label">
+    </label>
+
+</div>
+
+</div>
+
+
+
+<div class="col-6">
+<h5 class="mb-3">تنظیمات SEO</h5>
+
+
+<div class="mb-3">
+    <label asp-for="Slug"></label>
+    <input asp-for="Slug" class="form-control" />
+</div>
+
+
+<div class="mb-3">
+    <label asp-for="SeoTitle"></label>
+    <input asp-for="SeoTitle" class="form-control" />
+</div>
+
+
+<div class="mb-3">
+    <label asp-for="SeoDescription"></label>
+    <textarea asp-for="SeoDescription"
+              class="form-control"></textarea>
+</div>
+
+
+<div class="mb-3">
+    <label asp-for="SeoKeywords"></label>
+    <input asp-for="SeoKeywords"
+           class="form-control" />
+</div>
+
+
+<div class="mb-3">
+    <label asp-for="CanonicalUrl"></label>
+    <input asp-for="CanonicalUrl"
+           class="form-control" />
+</div>
+
+
+<div class="mb-3">
+    <label asp-for="Robots"></label>
+
+    <input asp-for="Robots"
+           class="form-control" />
+</div>
+</div>
+
+
+<button class="btn btn-primary">
+    ثبت پروژه
+    </button>
+</div>

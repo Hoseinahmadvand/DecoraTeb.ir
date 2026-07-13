@@ -19,7 +19,7 @@ public class BlogCategoryService : CrudService<BlogCategory>, IBlogCategoryServi
 
     public async Task<List<BlogCategoryListItemVm>> GetAllAsync()
     {
-        return await Table<BlogCategory>()
+       var result= await Table<BlogCategory>()
             .AsNoTracking()
             .OrderBy(x => x.Title)
             .Select(x => new BlogCategoryListItemVm
@@ -29,6 +29,8 @@ public class BlogCategoryService : CrudService<BlogCategory>, IBlogCategoryServi
                 Slug = x.Slug
             })
             .ToListAsync();
+
+        return result;
     }
 
     public async Task<CreateOrUpdateBlogCategoryVm?> GetByIdAsync(long id)

@@ -1,0 +1,268 @@
+﻿@using DecoraTeb.ViewModels.Slider
+@model List<SliderVm>
+
+
+<section class="hero-slider" id="home">
+
+    <div class="hs-track" id="heroSlider">
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var item = Model[i];
+
+            <div class="hs-slide @(i == 0 ? "active" : "")" data-slide="@i">
+
+                <div class="hs-media">
+
+                    @if (!string.IsNullOrWhiteSpace(item.Image))
+                    {
+                        <img class="hs-img"
+                             src="/uploads/slider/@item.Image"
+                             alt="@item.Title" />
+                    }
+                    else
+                    {
+                        <div class="hs-placeholder">
+                            <i class="bi bi-image"></i>
+                            <span>تصویری ثبت نشده است</span>
+                        </div>
+                    }
+
+                </div>
+
+                <div class="container hs-content">
+
+                    <div>
+
+                        <div class="hs-num">
+
+                            @($"{i + 1:00}") / @($"{Model.Count:00}")
+
+                            @if (!string.IsNullOrWhiteSpace(item.SubTitle))
+                            {
+                                <span> — @item.SubTitle</span>
+                            }
+
+                        </div>
+
+                        <span class="hs-tagpill">
+
+                            @item.SubTitle
+
+                        </span>
+
+                        <h1>
+
+                            @item.Title
+
+                        </h1>
+
+                        <p>
+
+                            @item.Description
+
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-3">
+
+                            @if (!string.IsNullOrWhiteSpace(item.ButtonLink))
+                            {
+                                <a href="@item.ButtonLink"
+                                   class="btn btn-copper">
+
+                                    @(string.IsNullOrWhiteSpace(item.ButtonText)
+                                        ? "مشاهده بیشتر"
+                                        : item.ButtonText)
+
+                                    <i class="bi bi-arrow-left ms-1"></i>
+
+                                </a>
+                            }
+
+                            <a href="#projects"
+                               class="btn btn-outline-ivory">
+
+                                مشاهده نمونه‌کارها
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+        <!-- side vertical indicators -->
+
+        <div class="hs-indicators">
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <button class="hs-dash @(i==0?"active":"")"
+                        data-goto="@i">
+                </button>
+            }
+
+        </div>
+
+        <!-- arrows -->
+
+        <div class="hs-arrows">
+
+            <button class="hs-arrow" id="hsPrev">
+
+                <i class="bi bi-arrow-right"></i>
+
+            </button>
+
+            <button class="hs-arrow" id="hsNext">
+
+                <i class="bi bi-arrow-left"></i>
+
+            </button>
+
+        </div>
+
+        <!-- counter -->
+
+        <div class="hs-counter">
+
+            <b id="hsCurrent">۰۱</b> / @Model.Count.ToString("00")
+
+        </div>
+
+        <!-- organic bottom shape -->
+
+        <div class="hs-shape">
+
+            <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+
+                <path d="M0,40 C280,110 500,0 760,30 C1040,62 1200,10 1440,50 L1440,90 L0,90 Z"
+                      fill="#fbf8f2">
+                </path>
+
+            </svg>
+
+        </div>
+
+    </div>
+
+</section>
+@* <section class="hero-slider" id="home">
+    <div class="hs-track" id="heroSlider">
+
+        <!-- Slide 1 -->
+        <div class="hs-slide active" data-slide="0">
+            <div class="hs-media">
+                <!-- برای جایگزینی: این div را با <img class="hs-img" src="آدرس-عکس-شما.jpg"> عوض کنید -->
+                <div class="hs-placeholder" style="background:linear-gradient(135deg,#1f4b3f,#2e6e5a);">
+                    <i class="bi bi-image"></i>
+                    <span>تصویر پیشنهادی: نمای پذیرش مطب دندانپزشکی</span>
+                </div>
+            </div>
+            <div class="container hs-content">
+                <div>
+                    <div class="hs-num">۰۱ / ۰۴ — دندانپزشکی</div>
+                    <span class="hs-tagpill">مطب دندانپزشکی</span>
+                    <h1>لبخندی که از همان در ورودی شروع می‌شود</h1>
+                    <p>چیدمان یونیت، مسیر استریل و نورپردازی دقیق؛ طراحی‌شده برای اعتماد بیمار از اولین قدم.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contact" class="btn btn-copper">درخواست مشاوره رایگان <i class="bi bi-arrow-left ms-1"></i></a>
+                        <a href="#projects" class="btn btn-outline-ivory">مشاهده نمونه‌کارها</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hs-slide" data-slide="1">
+            <div class="hs-media">
+                <div class="hs-placeholder" style="background:linear-gradient(135deg,#7a4c26,#be7c4d);">
+                    <i class="bi bi-image"></i>
+                    <span>تصویر پیشنهادی: اتاق کلینیک پوست و زیبایی</span>
+                </div>
+            </div>
+            <div class="container hs-content">
+                <div>
+                    <div class="hs-num">۰۲ / ۰۴ — پوست و زیبایی</div>
+                    <span class="hs-tagpill" style="background:var(--forest);">کلینیک پوست و زیبایی</span>
+                    <h1>آرامش بصری، اولین قدم درمان است</h1>
+                    <p>مواد اولیه لوکس، نور نرم و اتاق‌های خصوصی برای تجربه‌ای آرام و قابل‌اعتماد.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contact" class="btn btn-copper">درخواست مشاوره رایگان <i class="bi bi-arrow-left ms-1"></i></a>
+                        <a href="#projects" class="btn btn-outline-ivory">مشاهده نمونه‌کارها</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hs-slide" data-slide="2">
+            <div class="hs-media">
+                <div class="hs-placeholder" style="background:linear-gradient(135deg,#3d5a4f,#a9bfae);">
+                    <i class="bi bi-image"></i>
+                    <span>تصویر پیشنهادی: اتاق معاینه مطب عمومی</span>
+                </div>
+            </div>
+            <div class="container hs-content">
+                <div>
+                    <div class="hs-num">۰۳ / ۰۴ — مطب عمومی</div>
+                    <span class="hs-tagpill" style="background:#3d5a4f;">مطب عمومی و تخصصی</span>
+                    <h1>فضایی که با هر بیمار تنفس می‌کند</h1>
+                    <p>بهینه‌سازی متراژهای کوچک، مسیر حرکت کوتاه‌تر و اتاق معاینه استاندارد.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contact" class="btn btn-copper">درخواست مشاوره رایگان <i class="bi bi-arrow-left ms-1"></i></a>
+                        <a href="#projects" class="btn btn-outline-ivory">مشاهده نمونه‌کارها</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="hs-slide" data-slide="3">
+            <div class="hs-media">
+                <div class="hs-placeholder" style="background:linear-gradient(135deg,#8a6a2f,#c9a66b);">
+                    <i class="bi bi-image"></i>
+                    <span>تصویر پیشنهادی: اتاق انتظار با نورپردازی</span>
+                </div>
+            </div>
+            <div class="container hs-content">
+                <div>
+                    <div class="hs-num">۰۴ / ۰۴ — نورپردازی</div>
+                    <span class="hs-tagpill" style="background:var(--gold);color:var(--ink);">اتاق انتظار</span>
+                    <h1>نوری که تشخیص را دقیق‌تر می‌کند</h1>
+                    <p>ترکیب نور روز و مصنوعی، برای دقت پزشکی و آرامش بصری در کنار هم.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contact" class="btn btn-copper">درخواست مشاوره رایگان <i class="bi bi-arrow-left ms-1"></i></a>
+                        <a href="#projects" class="btn btn-outline-ivory">مشاهده نمونه‌کارها</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- side vertical indicators -->
+        <div class="hs-indicators">
+            <button class="hs-dash active" data-goto="0"></button>
+            <button class="hs-dash" data-goto="1"></button>
+            <button class="hs-dash" data-goto="2"></button>
+            <button class="hs-dash" data-goto="3"></button>
+        </div>
+
+        <!-- arrows -->
+        <div class="hs-arrows">
+            <button class="hs-arrow" id="hsPrev"><i class="bi bi-arrow-right"></i></button>
+            <button class="hs-arrow" id="hsNext"><i class="bi bi-arrow-left"></i></button>
+        </div>
+
+        <!-- counter -->
+        <div class="hs-counter"><b id="hsCurrent">۰۱</b> / ۰۴</div>
+
+        <!-- organic bottom shape -->
+        <div class="hs-shape">
+            <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,40 C280,110 500,0 760,30 C1040,62 1200,10 1440,50 L1440,90 L0,90 Z" fill="#fbf8f2"></path></svg>
+        </div>
+    </div>
+</section> *@

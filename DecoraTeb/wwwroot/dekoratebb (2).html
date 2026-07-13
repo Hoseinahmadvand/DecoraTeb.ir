@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دکوراطب | طراحی داخلی تخصصی مطب و کلینیک</title>
+<meta name="description" content="دکوراطب؛ طراحی و اجرای داخلی مطب، کلینیک و مراکز درمانی با ترکیب آرامش بصری و استانداردهای پزشکی">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style>
+:root{
+  --ink:#16241f;
+  --forest:#1f4b3f;
+  --forest-light:#2e6e5a;
+  --forest-pale:#e7efe9;
+  --ivory:#f7f2e9;
+  --paper:#fbf8f2;
+  --copper:#be7c4d;
+  --copper-light:#e0a875;
+  --sage:#a9bfae;
+  --gold:#c9a66b;
+  --white:#ffffff;
+  --line:rgba(22,36,31,0.1);
+  --shadow-soft:0 20px 50px -20px rgba(22,36,31,0.25);
+  --radius:18px;
+  --ff-body:'Vazirmatn', sans-serif;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--ff-body);
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+::selection{background:var(--copper);color:var(--white);}
+
+h1,h2,h3,h4,.display-font{
+  font-family:var(--ff-body);
+  font-weight:800;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8rem;font-weight:700;letter-spacing:.06em;
+  color:var(--copper);
+  text-transform:uppercase;
+}
+.eyebrow::before{
+  content:"";width:26px;height:2px;background:var(--copper);display:inline-block;
+}
+.section-pad{padding:96px 0;}
+@media(max-width:768px){.section-pad{padding:64px 0;}}
+.bg-ivory{background:var(--ivory);}
+.bg-forest{background:var(--forest);color:var(--ivory);}
+.bg-forest h2,.bg-forest h3,.bg-forest .display-font{color:var(--ivory);}
+.text-copper{color:var(--copper)!important;}
+.text-forest{color:var(--forest)!important;}
+.divider-gold{width:70px;height:3px;background:linear-gradient(90deg,var(--copper),var(--gold));border-radius:3px;}
+
+/* blueprint grid texture */
+.blueprint-bg{
+  background-image:
+    linear-gradient(rgba(31,75,63,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31,75,63,0.06) 1px, transparent 1px);
+  background-size:36px 36px;
+}
+.blueprint-bg-dark{
+  background-image:
+    linear-gradient(rgba(247,242,233,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,242,233,0.07) 1px, transparent 1px);
+  background-size:36px 36px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar-custom{
+  position:fixed;top:0;right:0;left:0;z-index:1050;
+  padding:22px 0;
+  transition:all .35s ease;
+  background:transparent;
+}
+.navbar-custom.scrolled{
+  padding:12px 0;
+  background:rgba(251,248,242,0.9);
+  backdrop-filter:blur(10px);
+  box-shadow:0 4px 24px rgba(22,36,31,0.08);
+}
+.nav-brand{
+  font-weight:800;font-size:1.4rem;color:var(--ivory)!important;
+  display:flex;align-items:center;gap:10px;
+  transition:color .35s ease;
+}
+.navbar-custom.scrolled .nav-brand{color:var(--ink)!important;}
+.navbar-toggler{color:var(--ivory);border-color:rgba(247,242,233,0.4)!important;}
+.navbar-custom.scrolled .navbar-toggler{color:var(--ink);border-color:rgba(22,36,31,0.2)!important;}
+@media(max-width:991px){
+  .navbar-collapse.show{
+    background:var(--forest);border-radius:16px;margin-top:14px;padding:10px 20px 18px;
+  }
+  .navbar-collapse.show .nav-link{color:var(--ivory)!important;}
+}
+.nav-brand .brand-mark{
+  width:38px;height:38px;border-radius:9px;
+  background:linear-gradient(135deg,var(--forest),var(--forest-light));
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ivory);font-weight:800;font-size:1.05rem;
+  transform:rotate(-6deg);
+  box-shadow:0 8px 18px -6px rgba(31,75,63,0.55);
+}
+.navbar-custom .nav-link{
+  font-weight:600;color:var(--ivory)!important;
+  padding:8px 16px!important;position:relative;
+  transition:color .35s ease;
+}
+.navbar-custom.scrolled .nav-link{color:var(--ink)!important;}
+.navbar-custom .nav-link::after{
+  content:"";position:absolute;right:16px;left:16px;bottom:2px;height:2px;
+  background:var(--copper);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.navbar-custom .nav-link:hover::after{transform:scaleX(1);}
+.btn-copper{
+  background:var(--copper);border:none;color:var(--white);
+  font-weight:700;padding:10px 24px;border-radius:50px;
+  transition:all .3s ease;
+  box-shadow:0 10px 24px -8px rgba(190,124,77,0.65);
+}
+.btn-copper:hover{background:#a86a3f;color:#fff;transform:translateY(-2px);box-shadow:0 14px 28px -8px rgba(190,124,77,0.75);}
+.btn-outline-forest{
+  border:1.5px solid var(--forest);color:var(--forest);font-weight:700;
+  border-radius:50px;padding:10px 24px;background:transparent;transition:.3s;
+}
+.btn-outline-forest:hover{background:var(--forest);color:var(--ivory);}
+.btn-outline-ivory{
+  border:1.5px solid rgba(247,242,233,0.5);color:var(--ivory);font-weight:700;
+  border-radius:50px;padding:10px 24px;background:transparent;transition:.3s;
+}
+.btn-outline-ivory:hover{background:var(--ivory);color:var(--forest);border-color:var(--ivory);}
+
+/* ===== HERO SLIDER BANNER ===== */
+.hero-slider{
+  position:relative;
+  height:92vh;
+  min-height:640px;
+  margin-top:0;
+  overflow:hidden;
+  background:var(--ink);
+}
+@media(max-width:768px){.hero-slider{height:auto;min-height:auto;padding-top:130px;padding-bottom:150px;}}
+
+.hs-track{position:relative;height:100%;width:100%;}
+.hs-slide{
+  position:absolute;inset:0;
+  opacity:0;visibility:hidden;
+  transition:opacity 1s ease;
+  z-index:1;
+}
+.hs-slide.active{opacity:1;visibility:visible;z-index:2;}
+@media(max-width:768px){.hs-slide{position:relative;display:none;height:auto;padding:20px 0 40px;}
+  .hs-slide.active{display:block;}
+}
+
+.hs-media{
+  position:absolute;inset:0;overflow:hidden;
+}
+@media(max-width:768px){.hs-media{position:relative;height:340px;border-radius:22px;margin:0 16px;overflow:hidden;}}
+.hs-media .hs-img,
+.hs-media .hs-placeholder{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform:scale(1.12);
+  transition:transform 8s ease-out;
+}
+.hs-slide.active .hs-img,
+.hs-slide.active .hs-placeholder{transform:scale(1);}
+.hs-placeholder{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  color:rgba(247,242,233,0.55);
+  border:2px dashed rgba(247,242,233,0.22);
+}
+.hs-placeholder i{font-size:2.6rem;}
+.hs-placeholder span{font-size:.85rem;font-weight:600;max-width:260px;text-align:center;}
+
+.hs-media::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(85deg, rgba(15,26,22,0.92) 8%, rgba(15,26,22,0.55) 42%, rgba(15,26,22,0.15) 68%);
+  z-index:2;
+}
+@media(max-width:768px){.hs-media::before{background:linear-gradient(0deg, rgba(15,26,22,0.85) 10%, rgba(15,26,22,0.15) 60%);}}
+
+/* organic bottom shape cut */
+.hs-shape{
+  position:absolute;bottom:-2px;left:0;right:0;z-index:5;line-height:0;
+}
+.hs-shape svg{width:100%;height:90px;display:block;}
+@media(max-width:768px){.hs-shape{display:none;}}
+
+.hs-content{
+  position:relative;z-index:6;height:100%;
+  display:flex;align-items:center;
+}
+@media(max-width:768px){.hs-content{height:auto;padding:0 34px;margin-top:22px;}}
+.hs-num{
+  font-size:.8rem;font-weight:800;color:var(--copper-light);letter-spacing:.08em;
+  display:flex;align-items:center;gap:10px;margin-bottom:16px;
+}
+.hs-num::after{content:"";width:38px;height:1px;background:rgba(247,242,233,0.35);}
+.hs-tagpill{
+  display:inline-block;background:var(--copper);color:#fff;font-size:.72rem;font-weight:800;
+  padding:5px 14px;border-radius:50px;margin-bottom:16px;
+}
+.hs-content h1{
+  color:var(--ivory);font-size:clamp(2.1rem,4.2vw,3.35rem);line-height:1.22;
+  max-width:620px;margin-bottom:18px;
+}
+.hs-content p{color:rgba(247,242,233,0.72);max-width:460px;font-size:1.05rem;line-height:1.9;margin-bottom:28px;}
+
+/* custom side progress indicators (vertical dashes, right side) */
+.hs-indicators{
+  position:absolute;top:50%;left:24px;transform:translateY(-50%);z-index:7;
+  display:flex;flex-direction:column;gap:14px;
+}
+@media(max-width:991px){.hs-indicators{display:none;}}
+.hs-dash{
+  width:34px;height:3px;border-radius:3px;background:rgba(247,242,233,0.3);border:none;
+  cursor:pointer;transition:.3s;position:relative;
+}
+.hs-dash.active{background:var(--copper);width:50px;}
+
+/* arrows */
+.hs-arrows{position:absolute;bottom:28px;left:24px;z-index:7;display:flex;gap:10px;}
+@media(max-width:768px){.hs-arrows{bottom:16px;}}
+.hs-arrow{
+  width:44px;height:44px;border-radius:50%;border:1px solid rgba(247,242,233,0.3);
+  background:rgba(247,242,233,0.06);backdrop-filter:blur(6px);
+  color:var(--ivory);display:flex;align-items:center;justify-content:center;transition:.25s;
+}
+.hs-arrow:hover{background:var(--copper);border-color:var(--copper);}
+
+/* slide counter */
+.hs-counter{
+  position:absolute;bottom:34px;right:24px;z-index:7;color:rgba(247,242,233,0.6);
+  font-size:.85rem;font-weight:700;display:flex;align-items:center;gap:8px;
+}
+@media(max-width:768px){.hs-counter{display:none;}}
+.hs-counter b{color:var(--ivory);font-size:1.15rem;}
+
+/* floating stat card overlapping the wave */
+.hero-stats-float{
+  position:relative;z-index:8;margin-top:-64px;
+}
+@media(max-width:768px){.hero-stats-float{margin-top:-120px;}}
+.hero-stats-card{
+  background:var(--white);border-radius:22px;
+  box-shadow:0 30px 60px -20px rgba(22,36,31,0.35);
+  padding:26px 20px;
+}
+.hero-stats-card .stat-num{font-size:1.9rem;font-weight:800;color:var(--forest);}
+.hero-stats-card .stat-label{font-size:.8rem;color:#5c6a64;font-weight:600;}
+.hero-stats-card .vr-line{width:1px;background:var(--line);}
+
+/* ===== SERVICES ===== */
+.card-3d-wrap{perspective:1200px;}
+.service-card{
+  background:var(--white);
+  border-radius:var(--radius);
+  padding:34px 28px;
+  height:100%;
+  border:1px solid var(--line);
+  transition:box-shadow .35s ease, transform .1s ease;
+  transform-style:preserve-3d;
+  will-change:transform;
+  position:relative;
+  overflow:hidden;
+}
+.service-card::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(190,124,77,0.06),transparent 60%);
+  opacity:0;transition:opacity .3s ease;
+}
+.service-card:hover::before{opacity:1;}
+.service-card:hover{box-shadow:0 30px 60px -20px rgba(22,36,31,0.28);}
+.service-icon{
+  width:58px;height:58px;border-radius:14px;
+  background:var(--forest-pale);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;color:var(--forest);
+  margin-bottom:20px;
+  transform:translateZ(30px);
+}
+.service-card h4{font-size:1.15rem;transform:translateZ(20px);}
+.service-card p{color:#5c6a64;font-size:.94rem;line-height:1.9;transform:translateZ(15px);}
+.service-num{
+  position:absolute;top:20px;left:24px;font-size:.75rem;font-weight:800;
+  color:rgba(31,75,63,0.25);
+}
+
+/* ===== PROCESS ===== */
+.process-line{
+  position:relative;
+}
+.process-line::before{
+  content:"";position:absolute;top:26px;right:8%;left:8%;height:2px;
+  background:repeating-linear-gradient(90deg,var(--copper) 0 8px, transparent 8px 16px);
+}
+@media(max-width:768px){.process-line::before{display:none;}}
+.process-step{position:relative;text-align:center;}
+.process-badge{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--forest);color:var(--ivory);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;margin:0 auto 20px;position:relative;z-index:2;
+  box-shadow:0 12px 24px -8px rgba(31,75,63,0.5);
+}
+.process-step h5{font-weight:800;}
+.process-step p{color:#5c6a64;font-size:.9rem;max-width:220px;margin:8px auto 0;}
+
+/* ===== PROJECTS ===== */
+.filter-pills .btn{
+  border-radius:50px;border:1px solid var(--line);color:var(--ink);
+  font-weight:600;font-size:.88rem;padding:8px 20px;background:var(--white);
+  margin:4px;transition:.25s;
+}
+.filter-pills .btn.active{background:var(--forest);color:var(--ivory);border-color:var(--forest);}
+.project-card{
+  border-radius:var(--radius);overflow:hidden;position:relative;
+  height:320px;cursor:pointer;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s ease;
+}
+.project-card:hover{transform:translateY(-10px) rotateX(4deg);box-shadow:0 40px 70px -25px rgba(22,36,31,0.4);}
+.project-visual{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(22,36,31,0.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(22,36,31,0.06) 1px,transparent 1px);
+  background-size:24px 24px;
+  transition:transform .6s ease;
+}
+.project-card:hover .project-visual{transform:scale(1.08);}
+.project-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(22,36,31,0.92) 5%, rgba(22,36,31,0.15) 55%, transparent 80%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:var(--ivory);
+}
+.project-tag{
+  display:inline-block;background:rgba(247,242,233,0.15);
+  padding:4px 14px;border-radius:50px;font-size:.72rem;font-weight:700;margin-bottom:10px;width:fit-content;
+  backdrop-filter:blur(6px);
+}
+.project-hidden{display:none!important;}
+
+/* ===== MOBILE SCROLL-SNAP SLIDER (projects & blog) ===== */
+.swipe-hint{
+  display:none;align-items:center;gap:8px;color:#8a958f;font-size:.82rem;font-weight:600;margin:-10px 0 18px;
+}
+.swipe-hint i{font-size:1rem;color:var(--copper);}
+@media(max-width:768px){
+  .swipe-hint{display:flex;}
+  .mobile-slider{
+    display:flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    margin-inline:calc(-1 * var(--bs-gutter-x, .75rem)) ;
+    padding-inline:20px;
+    padding-bottom:10px;
+  }
+  .mobile-slider::-webkit-scrollbar{display:none;}
+  .mobile-slider > *{
+    flex:0 0 78%;
+    max-width:78%;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+  .mobile-slider .project-card{height:280px;}
+}
+@media(max-width:420px){
+  .mobile-slider > *{flex-basis:86%;max-width:86%;}
+}
+
+/* ===== TESTIMONIALS ===== */
+.testi-card{
+  background:var(--white);border-radius:var(--radius);padding:40px;
+  border:1px solid var(--line);
+  max-width:700px;margin:0 auto;text-align:center;
+}
+.testi-quote{font-size:1.2rem;line-height:2;color:var(--ink);font-weight:500;}
+.testi-avatar{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,var(--copper),var(--gold));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;
+  margin:0 auto 12px;
+}
+.carousel-indicators [data-bs-target]{background:var(--copper);}
+
+/* ===== BLOG ===== */
+.blog-card{
+  border-radius:var(--radius);overflow:hidden;background:var(--white);
+  border:1px solid var(--line);height:100%;transition:.35s;
+}
+.blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);}
+.blog-thumb{
+  height:180px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--forest),var(--forest-light));
+}
+.blog-thumb::after{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.08) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+.blog-cat{
+  position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.92);
+  color:var(--forest);font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:50px;z-index:2;
+}
+.blog-body{padding:22px;}
+.blog-body h5{font-weight:800;font-size:1.05rem;}
+.blog-body p{color:#5c6a64;font-size:.89rem;}
+.blog-meta{font-size:.78rem;color:#8a958f;}
+
+/* ===== CTA BAND ===== */
+.cta-band{
+  background:linear-gradient(120deg,var(--forest) 0%, #163b31 100%);
+  border-radius:28px;padding:56px;position:relative;overflow:hidden;color:var(--ivory);
+}
+.cta-band::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle at 90% 20%, rgba(190,124,77,0.35), transparent 45%);
+}
+
+/* ===== CONTACT ===== */
+.contact-info-item{
+  display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line);
+}
+.contact-icon{
+  width:44px;height:44px;border-radius:12px;background:var(--forest-pale);color:var(--forest);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.form-control-custom{
+  border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;font-size:.95rem;
+}
+.form-control-custom:focus{border-color:var(--forest-light);box-shadow:0 0 0 3px rgba(46,110,90,0.15);}
+
+/* ===== FOOTER ===== */
+footer{background:var(--ink);color:rgba(247,242,233,0.75);padding:64px 0 24px;}
+footer h6{color:var(--ivory);font-weight:800;margin-bottom:18px;}
+footer a{color:rgba(247,242,233,0.65);text-decoration:none;transition:.2s;}
+footer a:hover{color:var(--copper);}
+.footer-social{
+  width:38px;height:38px;border-radius:50%;border:1px solid rgba(247,242,233,0.2);
+  display:flex;align-items:center;justify-content:center;color:var(--ivory);transition:.25s;
+}
+.footer-social:hover{background:var(--copper);border-color:var(--copper);}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* back to top */
+#backTop{
+  position:fixed;bottom:26px;left:26px;z-index:1000;
+  width:46px;height:46px;border-radius:50%;background:var(--forest);color:var(--ivory);
+  display:flex;align-items:center;justify-content:center;border:none;
+  opacity:0;pointer-events:none;transition:.3s;box-shadow:0 12px 24px -8px rgba(31,75,63,0.6);
+}
+#backTop.show{opacity:1;pointer-events:auto;}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand nav-brand" href="#home">
+      <span class="brand-mark">دط</span>
+      دکوراطب
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-1 py-3 py-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#home">خانه</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">درباره ما</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">پروژه‌ها</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">بلاگ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">تماس با ما</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-copper d-none d-lg-inline-block">مشاوره رایگان</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO SLIDER BANNER ===== -->
+<section class="hero-slider" id="home">
+  <div class="hs-track" id="heroSlider">
+
+    <!-- Slide 1 -->
+    <div class="hs-slide active" data-slide="0">
+      <div class="hs-media">
+        <!-- برای جایگزینی: این div را با <img class="hs-img" src="آدرس-عکس-شما.jpg"> عوض کنید -->
+        <div class="hs-placeholder" style="background:linear-gradient(135deg,#1f4b3f,#2e6e5a);">
+          <i class="bi bi-image"></i>
+          <span>تصویر پیشنهادی: نمای پذیرش مطب دندانپزشکی</span>
+        </div>
+      </div>
+      <div class="container hs-content">
+        <div>
+          <div class="hs-num">۰۱ / ۰۴ — دندانپزشکی</div>
+          <span class="hs-tagpill">مطب دندانپزشکی</span>
+          <h1>لبخندی که از همان در ورودی شروع می‌شود</h1>
+          <p>چیدمان یونیت، مسیر استریل و نورپردازی دقیق؛ طراحی‌شده برای اعتماد بیمار از اولین قدم.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#contact" class="btn btn-copper">درخواست مشاوره رایگان <i class="bi bi-arrow-left ms-1"></i></a>
+            <a href="#projects" class="btn btn-outline-ivory">مشاهده نمونه‌کارها</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="hs-slide" data-slide="1">
+      <div class="hs-media">
+        <div class="hs-placeholder" style="background:linear-gradient(135deg,#7a4c26,#be7c4d);">
+          <i class="bi bi-image"></i>
+          <span>تصویر پیشنهادی: اتاق کلینیک پوست و زیبایی</span>
+        </div>
+      </div>
+      <div class="container hs-content">
+        <div>
+          <div class="hs-num">۰۲ / ۰۴ — پوست و زیبایی</div>
+          <span class="hs-tagpill" style="background:var(--forest);">کلینیک پوست و زیبایی</span>
+          <h1>آرامش بصری، اولین قدم درمان است</h1>
+          <p>مواد اولیه لوکس، نور نرم و اتاق‌های خصوصی برای تجربه‌ای آرام و قابل‌اعتماد.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#contact" class="btn btn-copper">درخواست مشاوره رایگان <i class="bi bi-arrow-left ms-1"></i></a>
+            <a href="#projects" class="btn btn-outline-ivory">مشاهده نمونه‌کارها</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hs-slide" data-slide="2">
+      <div class="hs-media">
+        <div class="hs-placeholder" style="background:linear-gradient(135deg,#3d5a4f,#a9bfae);">
+          <i class="bi bi-image"></i>
+          <span>تصویر پیشنهادی: اتاق معاینه مطب عمومی</span>
+        </div>
+      </div>
+      <div class="container hs-content">
+        <div>
+          <div class="hs-num">۰۳ / ۰۴ — مطب عمومی</div>
+          <span class="hs-tagpill" style="background:#3d5a4f;">مطب عمومی و تخصصی</span>
+          <h1>فضایی که با هر بیمار تنفس می‌کند</h1>
+          <p>بهینه‌سازی متراژهای کوچک، مسیر حرکت کوتاه‌تر و اتاق معاینه استاندارد.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#contact" class="btn btn-copper">درخواست مشاوره رایگان <i class="bi bi-arrow-left ms-1"></i></a>
+            <a href="#projects" class="btn btn-outline-ivory">مشاهده نمونه‌کارها</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="hs-slide" data-slide="3">
+      <div class="hs-media">
+        <div class="hs-placeholder" style="background:linear-gradient(135deg,#8a6a2f,#c9a66b);">
+          <i class="bi bi-image"></i>
+          <span>تصویر پیشنهادی: اتاق انتظار با نورپردازی</span>
+        </div>
+      </div>
+      <div class="container hs-content">
+        <div>
+          <div class="hs-num">۰۴ / ۰۴ — نورپردازی</div>
+          <span class="hs-tagpill" style="background:var(--gold);color:var(--ink);">اتاق انتظار</span>
+          <h1>نوری که تشخیص را دقیق‌تر می‌کند</h1>
+          <p>ترکیب نور روز و مصنوعی، برای دقت پزشکی و آرامش بصری در کنار هم.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#contact" class="btn btn-copper">درخواست مشاوره رایگان <i class="bi bi-arrow-left ms-1"></i></a>
+            <a href="#projects" class="btn btn-outline-ivory">مشاهده نمونه‌کارها</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- side vertical indicators -->
+    <div class="hs-indicators">
+      <button class="hs-dash active" data-goto="0"></button>
+      <button class="hs-dash" data-goto="1"></button>
+      <button class="hs-dash" data-goto="2"></button>
+      <button class="hs-dash" data-goto="3"></button>
+    </div>
+
+    <!-- arrows -->
+    <div class="hs-arrows">
+      <button class="hs-arrow" id="hsPrev"><i class="bi bi-arrow-right"></i></button>
+      <button class="hs-arrow" id="hsNext"><i class="bi bi-arrow-left"></i></button>
+    </div>
+
+    <!-- counter -->
+    <div class="hs-counter"><b id="hsCurrent">۰۱</b> / ۰۴</div>
+
+    <!-- organic bottom shape -->
+    <div class="hs-shape">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,40 C280,110 500,0 760,30 C1040,62 1200,10 1440,50 L1440,90 L0,90 Z" fill="#fbf8f2"></path></svg>
+    </div>
+  </div>
+</section>
+
+<!-- floating stats overlapping the wave -->
+<div class="container hero-stats-float">
+  <div class="hero-stats-card">
+    <div class="row g-3 text-center align-items-center">
+      <div class="col-4 col-md-3"><div class="stat-num" data-count="180">0</div><div class="stat-label">مطب و کلینیک طراحی‌شده</div></div>
+      <div class="col-4 col-md-3 border-start border-end"><div class="stat-num" data-count="9">0</div><div class="stat-label">سال تجربه اجرایی</div></div>
+      <div class="col-4 col-md-3"><div class="stat-num" data-count="98">0</div><div class="stat-label">درصد رضایت کارفرما</div></div>
+      <div class="col-12 col-md-3 mt-3 mt-md-0">
+        <a href="#contact" class="btn btn-outline-forest w-100">شروع پروژه من <i class="bi bi-arrow-left ms-1"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="section-pad" id="about">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-5 reveal">
+        <span class="eyebrow mb-3 d-inline-flex">درباره دکوراطب</span>
+        <h2 class="mb-4">طراحی داخلی، وقتی به زبان پزشکی مسلط باشد</h2>
+        <p class="text-secondary" style="line-height:2;">تیم دکوراطب از معماران داخلی و کارشناسانی تشکیل شده که سال‌ها فقط روی فضاهای درمانی کار کرده‌اند؛ از مطب تک‌نفره تا کلینیک چندتخصصی. ما می‌دانیم مسیر حرکت بیمار، نور اتاق معاینه، جنس کفپوش ضدعفونی‌پذیر و صدای محیط، به همان اندازه زیبایی بصری اهمیت دارد.</p>
+        <div class="row g-3 mt-2">
+          <div class="col-sm-6">
+            <div class="d-flex gap-3">
+              <i class="bi bi-shield-check fs-4 text-forest"></i>
+              <div><strong>استاندارد بهداشتی</strong><div class="small text-secondary">مطابق ضوابط نظام پزشکی</div></div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex gap-3">
+              <i class="bi bi-rulers fs-4 text-forest"></i>
+              <div><strong>ارگونومی کامل</strong><div class="small text-secondary">برای بیمار و کادر درمان</div></div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex gap-3">
+              <i class="bi bi-palette fs-4 text-forest"></i>
+              <div><strong>هویت بصری برند</strong><div class="small text-secondary">هماهنگ با تخصص شما</div></div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex gap-3">
+              <i class="bi bi-clock-history fs-4 text-forest"></i>
+              <div><strong>اجرای زمان‌بندی‌شده</strong><div class="small text-secondary">بدون توقف فعالیت مطب</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 reveal">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="p-4 rounded-4 bg-ivory h-100">
+              <i class="bi bi-quote fs-2 text-copper"></i>
+              <p class="mt-3" style="line-height:1.9;">«هدف ما کاهش اضطراب بیمار از لحظه ورود است؛ نور، رنگ و چیدمان می‌توانند بخشی از فرآیند درمان باشند.»</p>
+              <div class="fw-bold mt-3">تیم طراحی دکوراطب</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-4 rounded-4 h-100 text-white" style="background:var(--forest);">
+              <div class="fs-1 fw-bold">+٩</div>
+              <div class="mb-3">سال همکاری با پزشکان و مدیران کلینیک در سراسر کشور</div>
+              <div class="divider-gold"></div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="p-4 rounded-4 border h-100 d-flex flex-wrap gap-4 align-items-center justify-content-between">
+              <div><i class="bi bi-award fs-3 text-forest"></i><div class="small fw-bold mt-2">طراحی برتر ۱۴۰۲</div></div>
+              <div><i class="bi bi-people fs-3 text-forest"></i><div class="small fw-bold mt-2">+۴۰ متخصص همکار</div></div>
+              <div><i class="bi bi-building fs-3 text-forest"></i><div class="small fw-bold mt-2">۱۲ شهر فعالیت</div></div>
+              <div><i class="bi bi-hand-thumbs-up fs-3 text-forest"></i><div class="small fw-bold mt-2">ضمانت اجرا</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section-pad bg-ivory blueprint-bg" id="services">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow justify-content-center d-inline-flex">خدمات ما</span>
+      <h2 class="mt-3">هر تخصص، چیدمان و نور خودش را می‌خواهد</h2>
+      <p class="text-secondary mx-auto" style="max-width:600px;">از دندانپزشکی تا پوست و زیبایی، هر رشته پزشکی نیازهای فضایی متفاوتی دارد؛ ما این تفاوت را در طراحی لحاظ می‌کنیم.</p>
+    </div>
+    <div class="row g-4 card-3d-wrap">
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="service-card tilt-card">
+          <div class="service-num">۰۱</div>
+          <div class="service-icon"><i class="bi bi-emoji-smile"></i></div>
+          <h4>طراحی مطب دندانپزشکی</h4>
+          <p>چیدمان یونیت، اتاق رادیولوژی و مسیر استریل با اولویت گردش کار بی‌وقفه کادر درمان.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="service-card tilt-card">
+          <div class="service-num">۰۲</div>
+          <div class="service-icon"><i class="bi bi-flower1"></i></div>
+          <h4>کلینیک پوست و زیبایی</h4>
+          <p>نورپردازی نرم، مواد اولیه لوکس و اتاق‌های خصوصی برای تجربه‌ای آرام و قابل‌اعتماد.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="service-card tilt-card">
+          <div class="service-num">۰۳</div>
+          <div class="service-icon"><i class="bi bi-heart-pulse"></i></div>
+          <h4>مطب عمومی و تخصصی</h4>
+          <p>بهینه‌سازی متراژهای کوچک، فضای انتظار کارآمد و اتاق معاینه استاندارد.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="service-card tilt-card">
+          <div class="service-num">۰۴</div>
+          <div class="service-icon"><i class="bi bi-people"></i></div>
+          <h4>طراحی اتاق انتظار</h4>
+          <p>کاهش اضطراب بیمار با مبلمان راحت، مسیر دید مناسب و صدابندی محیط.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="service-card tilt-card">
+          <div class="service-num">۰۵</div>
+          <div class="service-icon"><i class="bi bi-lightbulb"></i></div>
+          <h4>نورپردازی درمانی</h4>
+          <p>ترکیب نور روز و مصنوعی برای دقت تشخیص پزشکی و آرامش بصری بیمار.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="service-card tilt-card">
+          <div class="service-num">۰۶</div>
+          <div class="service-icon"><i class="bi bi-compass"></i></div>
+          <h4>مشاوره چیدمان و ارگونومی</h4>
+          <p>بررسی نقشه موجود و پیشنهاد اصلاحات کم‌هزینه پیش از هر تصمیم اجرایی.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="section-pad" id="process">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow justify-content-center d-inline-flex">مسیر همکاری</span>
+      <h2 class="mt-3">از بازدید اول تا تحویل کلید</h2>
+    </div>
+    <div class="row process-line g-4">
+      <div class="col-6 col-md-3 process-step reveal">
+        <div class="process-badge">۱</div>
+        <h5>مشاوره و بازدید</h5>
+        <p>بررسی متراژ، تخصص و بودجه در محل مطب شما</p>
+      </div>
+      <div class="col-6 col-md-3 process-step reveal">
+        <div class="process-badge">۲</div>
+        <h5>طراحی و مدل‌سازی</h5>
+        <p>ارائه نقشه، رندر سه‌بعدی و لیست متریال</p>
+      </div>
+      <div class="col-6 col-md-3 process-step reveal">
+        <div class="process-badge">۳</div>
+        <h5>اجرای پروژه</h5>
+        <p>نظارت مهندسی روزانه با زمان‌بندی مشخص</p>
+      </div>
+      <div class="col-6 col-md-3 process-step reveal">
+        <div class="process-badge">۴</div>
+        <h5>تحویل و پشتیبانی</h5>
+        <p>تحویل نهایی و پشتیبانی فنی تا یک سال</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="section-pad bg-ivory" id="projects">
+  <div class="container">
+    <div class="text-center mb-4 reveal">
+      <span class="eyebrow justify-content-center d-inline-flex">نمونه‌کارها</span>
+      <h2 class="mt-3">پروژه‌هایی که اجرا کرده‌ایم</h2>
+    </div>
+    <div class="d-flex justify-content-center filter-pills mb-5 flex-wrap">
+      <button class="btn active" data-filter="all">همه</button>
+      <button class="btn" data-filter="dental">دندانپزشکی</button>
+      <button class="btn" data-filter="skin">پوست و زیبایی</button>
+      <button class="btn" data-filter="general">مطب عمومی</button>
+    </div>
+    <div class="swipe-hint justify-content-center"><i class="bi bi-hand-index-thumb"></i> برای دیدن پروژه‌های بیشتر، بکشید</div>
+    <div class="row g-4 mobile-slider" id="projectGrid">
+      <div class="col-md-6 col-lg-4 project-item reveal" data-cat="dental">
+        <div class="project-card">
+          <div class="project-visual" style="background:linear-gradient(135deg,var(--forest),var(--forest-light));"></div>
+          <div class="project-overlay">
+            <span class="project-tag">دندانپزشکی</span>
+            <h5 class="mb-1">کلینیک دندانپزشکی آراد</h5>
+            <div class="small opacity-75">تهران، ۱۲۰ متر مربع</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 project-item reveal" data-cat="skin">
+        <div class="project-card">
+          <div class="project-visual" style="background:linear-gradient(135deg,var(--copper),var(--gold));"></div>
+          <div class="project-overlay">
+            <span class="project-tag">پوست و زیبایی</span>
+            <h5 class="mb-1">کلینیک زیبایی نگاره</h5>
+            <div class="small opacity-75">اصفهان، ۹۰ متر مربع</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 project-item reveal" data-cat="general">
+        <div class="project-card">
+          <div class="project-visual" style="background:linear-gradient(135deg,var(--sage),var(--forest-light));"></div>
+          <div class="project-overlay">
+            <span class="project-tag">مطب عمومی</span>
+            <h5 class="mb-1">مطب دکتر رستمی</h5>
+            <div class="small opacity-75">شیراز، ۶۵ متر مربع</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 project-item reveal" data-cat="dental">
+        <div class="project-card">
+          <div class="project-visual" style="background:linear-gradient(135deg,#173a30,var(--forest));"></div>
+          <div class="project-overlay">
+            <span class="project-tag">دندانپزشکی</span>
+            <h5 class="mb-1">کلینیک دندان سفید</h5>
+            <div class="small opacity-75">مشهد، ۱۴۰ متر مربع</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 project-item reveal" data-cat="skin">
+        <div class="project-card">
+          <div class="project-visual" style="background:linear-gradient(135deg,var(--gold),var(--copper-light));"></div>
+          <div class="project-overlay">
+            <span class="project-tag">پوست و زیبایی</span>
+            <h5 class="mb-1">استودیو پوست لمیا</h5>
+            <div class="small opacity-75">تهران، ۷۵ متر مربع</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 project-item reveal" data-cat="general">
+        <div class="project-card">
+          <div class="project-visual" style="background:linear-gradient(135deg,var(--forest-light),var(--sage));"></div>
+          <div class="project-overlay">
+            <span class="project-tag">مطب عمومی</span>
+            <h5 class="mb-1">مرکز درمانی سلامت</h5>
+            <div class="small opacity-75">کرج، ۲۰۰ متر مربع</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section-pad bg-forest blueprint-bg-dark">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow justify-content-center d-inline-flex">نظر مشتریان</span>
+      <h2 class="mt-3">حرف کسانی که با ما ساختند</h2>
+    </div>
+    <div id="testiCarousel" class="carousel slide reveal" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="testi-card">
+            <div class="testi-avatar">ر.ک</div>
+            <p class="testi-quote">«دکوراطب فضای ۹۰ متری مطب من را بدون تعطیلی طولانی بازسازی کرد. بیمارها از همان جلسه اول تفاوت آرامش محیط را حس می‌کنند.»</p>
+            <div class="fw-bold mt-3">دکتر رضا کریمی</div>
+            <div class="small text-secondary">متخصص پوست، تهران</div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testi-card">
+            <div class="testi-avatar">س.ن</div>
+            <p class="testi-quote">«چیدمان پیشنهادی تیم دکوراطب باعث شد مسیر بیماران در کلینیک ما نصف زمان قبل طول بکشد. واقعاً به کار پزشکی مسلط بودند.»</p>
+            <div class="fw-bold mt-3">دکتر سارا نجفی</div>
+            <div class="small text-secondary">دندانپزشک، اصفهان</div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testi-card">
+            <div class="testi-avatar">م.ح</div>
+            <p class="testi-quote">«نورپردازی اتاق معاینه دقیقاً همان چیزی بود که برای تشخیص دقیق‌تر نیاز داشتم. پروژه سر موعد و طبق بودجه تحویل شد.»</p>
+            <div class="fw-bold mt-3">دکتر محمد حیدری</div>
+            <div class="small text-secondary">پزشک عمومی، شیراز</div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-indicators position-relative mt-4" style="bottom:0;">
+        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="2"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG ===== -->
+<section class="section-pad" id="blog">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3 reveal">
+      <div>
+        <span class="eyebrow d-inline-flex">بلاگ دکوراطب</span>
+        <h2 class="mt-3 mb-0">راهنمای طراحی فضای درمانی</h2>
+      </div>
+      <a href="#" class="btn btn-outline-forest">مشاهده همه مقالات</a>
+    </div>
+    <div class="swipe-hint"><i class="bi bi-hand-index-thumb"></i> برای مطالعه مقالات بیشتر، بکشید</div>
+    <div class="row g-4 mobile-slider">
+      <div class="col-md-4 reveal">
+        <div class="blog-card">
+          <div class="blog-thumb"><span class="blog-cat">نورپردازی</span></div>
+          <div class="blog-body">
+            <div class="blog-meta mb-2"><i class="bi bi-calendar3 me-1"></i> ۱۸ تیر ۱۴۰۴</div>
+            <h5>۷ اصل نورپردازی اتاق معاینه که کمتر کسی می‌داند</h5>
+            <p>تفاوت نور تشخیصی و نور آرامش‌بخش و نحوه ترکیب درست آن‌ها.</p>
+            <a href="#" class="text-forest fw-bold text-decoration-none">ادامه مطلب <i class="bi bi-arrow-left"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 reveal">
+        <div class="blog-card">
+          <div class="blog-thumb"><span class="blog-cat">چیدمان</span></div>
+          <div class="blog-body">
+            <div class="blog-meta mb-2"><i class="bi bi-calendar3 me-1"></i> ۵ تیر ۱۴۰۴</div>
+            <h5>چگونه مسیر حرکت بیمار را کوتاه‌تر و امن‌تر کنیم</h5>
+            <p>اصول ترافیک داخلی برای کلینیک‌های شلوغ و کم‌متراژ.</p>
+            <a href="#" class="text-forest fw-bold text-decoration-none">ادامه مطلب <i class="bi bi-arrow-left"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 reveal">
+        <div class="blog-card">
+          <div class="blog-thumb"><span class="blog-cat">متریال</span></div>
+          <div class="blog-body">
+            <div class="blog-meta mb-2"><i class="bi bi-calendar3 me-1"></i> ۲۲ خرداد ۱۴۰۴</div>
+            <h5>راهنمای انتخاب کفپوش ضدعفونی‌پذیر برای مطب</h5>
+            <p>مقایسه متریال‌های رایج از نظر دوام، بهداشت و هزینه.</p>
+            <a href="#" class="text-forest fw-bold text-decoration-none">ادامه مطلب <i class="bi bi-arrow-left"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="pb-5">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div class="row align-items-center position-relative">
+        <div class="col-lg-8">
+          <h2 class="mb-2">آماده‌اید فضای مطب‌تان را متحول کنید؟</h2>
+          <p class="mb-0 opacity-75">همین امروز وقت بازدید رایگان بگیرید؛ تیم ما ظرف ۴۸ ساعت با شما تماس می‌گیرد.</p>
+        </div>
+        <div class="col-lg-4 text-lg-start mt-4 mt-lg-0">
+          <a href="#contact" class="btn btn-copper w-100">رزرو وقت مشاوره</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section-pad bg-ivory" id="contact">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5 reveal">
+        <span class="eyebrow d-inline-flex">تماس با ما</span>
+        <h2 class="mt-3 mb-4">گفت‌وگو را شروع کنیم</h2>
+        <p class="text-secondary mb-4">برای دریافت مشاوره رایگان یا بازدید حضوری از فضای مطب، فرم روبه‌رو را پر کنید یا مستقیم تماس بگیرید.</p>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="bi bi-telephone"></i></div>
+          <div><strong>تماس تلفنی</strong><div class="text-secondary small">۰۲۱-۹۱۰۰۰۰۰۰</div></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+          <div><strong>ایمیل</strong><div class="text-secondary small">info@dekorateb.ir</div></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+          <div><strong>دفتر مرکزی</strong><div class="text-secondary small">تهران، خیابان ولیعصر، ساختمان دکوراطب</div></div>
+        </div>
+        <div class="d-flex gap-2 mt-4">
+          <a href="#" class="footer-social" style="border-color:var(--line);color:var(--forest);"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="footer-social" style="border-color:var(--line);color:var(--forest);"><i class="bi bi-telegram"></i></a>
+          <a href="#" class="footer-social" style="border-color:var(--line);color:var(--forest);"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-7 reveal">
+        <form class="row g-3 bg-white p-4 p-md-5 rounded-4 shadow-sm" id="contactForm" novalidate>
+          <div class="col-md-6">
+            <label class="form-label small fw-bold">نام و نام خانوادگی</label>
+            <input type="text" class="form-control form-control-custom" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small fw-bold">شماره تماس</label>
+            <input type="tel" class="form-control form-control-custom" required>
+          </div>
+          <div class="col-12">
+            <label class="form-label small fw-bold">نوع فضای درمانی</label>
+            <select class="form-select form-control-custom">
+              <option>مطب دندانپزشکی</option>
+              <option>کلینیک پوست و زیبایی</option>
+              <option>مطب عمومی و تخصصی</option>
+              <option>سایر</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label small fw-bold">توضیحات پروژه</label>
+            <textarea class="form-control form-control-custom" rows="4" placeholder="متراژ، شهر، و توضیح کوتاهی از نیازتان..."></textarea>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-copper w-100 py-3">ارسال درخواست مشاوره</button>
+          </div>
+          <div class="col-12 text-center small text-success d-none" id="formSuccess">
+            <i class="bi bi-check-circle-fill me-1"></i> درخواست شما ثبت شد؛ به‌زودی با شما تماس می‌گیریم.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <a class="nav-brand mb-3 d-flex" href="#home" style="color:var(--ivory)!important;">
+          <span class="brand-mark">دط</span> دکوراطب
+        </a>
+        <p class="small">استودیو تخصصی طراحی و اجرای داخلی مطب، کلینیک و مراکز درمانی در سراسر ایران.</p>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>دسترسی سریع</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="#about">درباره ما</a></li>
+          <li><a href="#services">خدمات</a></li>
+          <li><a href="#projects">پروژه‌ها</a></li>
+          <li><a href="#blog">بلاگ</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-6">
+        <h6>خدمات</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="#services">طراحی مطب دندانپزشکی</a></li>
+          <li><a href="#services">کلینیک پوست و زیبایی</a></li>
+          <li><a href="#services">نورپردازی درمانی</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h6>ما را دنبال کنید</h6>
+        <div class="d-flex gap-2 mb-3">
+          <a href="#" class="footer-social"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="footer-social"><i class="bi bi-telegram"></i></a>
+          <a href="#" class="footer-social"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4" style="border-color:rgba(247,242,233,0.15);">
+    <div class="d-flex flex-wrap justify-content-between small">
+      <span>© ۱۴۰۴ دکوراطب. تمامی حقوق محفوظ است.</span>
+      <span>طراحی‌شده با <i class="bi bi-heart-fill text-copper"></i> برای فضاهای درمانی</span>
+    </div>
+  </div>
+</footer>
+
+<button id="backTop"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Navbar scroll state
+const nav = document.getElementById('mainNav');
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', ()=>{
+  if(window.scrollY > 40){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+  if(window.scrollY > 500){ backTop.classList.add('show'); } else { backTop.classList.remove('show'); }
+});
+backTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+// close mobile menu on link click
+document.querySelectorAll('#navMenu .nav-link').forEach(l=>{
+  l.addEventListener('click', ()=>{
+    const menu = document.getElementById('navMenu');
+    if(menu.classList.contains('show')){
+      bootstrap.Collapse.getOrCreateInstance(menu).hide();
+    }
+  });
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+},{threshold:0.15});
+reveals.forEach(el=> io.observe(el));
+
+// Counter animation
+const counters = document.querySelectorAll('.stat-num');
+const counterIO = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el = e.target;
+      const target = parseInt(el.dataset.count,10);
+      let cur = 0;
+      const step = Math.max(1, Math.round(target/50));
+      const timer = setInterval(()=>{
+        cur += step;
+        if(cur >= target){ cur = target; clearInterval(timer); }
+        el.textContent = cur.toLocaleString('fa-IR');
+      }, 25);
+      counterIO.unobserve(el);
+    }
+  });
+},{threshold:0.5});
+counters.forEach(c=> counterIO.observe(c));
+
+// 3D tilt on service cards
+const tiltCards = document.querySelectorAll('.tilt-card');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduceMotion){
+  tiltCards.forEach(card=>{
+    card.addEventListener('mousemove', (e)=>{
+      const r = card.getBoundingClientRect();
+      const x = e.clientX - r.left; const y = e.clientY - r.top;
+      const rx = ((y / r.height) - 0.5) * -12;
+      const ry = ((x / r.width) - 0.5) * 12;
+      card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave', ()=>{
+      card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateY(0)';
+    });
+  });
+
+}
+
+// ===== Hero image slider =====
+(function(){
+  const slides = document.querySelectorAll('.hs-slide');
+  const dashes = document.querySelectorAll('.hs-dash');
+  const counter = document.getElementById('hsCurrent');
+  const prevBtn = document.getElementById('hsPrev');
+  const nextBtn = document.getElementById('hsNext');
+  if(!slides.length) return;
+  const faNums = ['۰۱','۰۲','۰۳','۰۴','۰۵','۰۶'];
+  let current = 0;
+  let timer;
+
+  function goTo(index){
+    slides[current].classList.remove('active');
+    dashes[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dashes[current].classList.add('active');
+    if(counter) counter.textContent = faNums[current] || (current+1);
+  }
+  function next(){ goTo(current+1); }
+  function prev(){ goTo(current-1); }
+  function startAuto(){ timer = setInterval(next, 6000); }
+  function stopAuto(){ clearInterval(timer); }
+
+  nextBtn && nextBtn.addEventListener('click', ()=>{ next(); stopAuto(); startAuto(); });
+  prevBtn && prevBtn.addEventListener('click', ()=>{ prev(); stopAuto(); startAuto(); });
+  dashes.forEach(d=> d.addEventListener('click', ()=>{ goTo(parseInt(d.dataset.goto,10)); stopAuto(); startAuto(); }));
+
+  const sliderSection = document.querySelector('.hero-slider');
+  sliderSection.addEventListener('mouseenter', stopAuto);
+  sliderSection.addEventListener('mouseleave', startAuto);
+
+  startAuto();
+})();
+
+// Project filter
+const filterBtns = document.querySelectorAll('.filter-pills .btn');
+const projectItems = document.querySelectorAll('.project-item');
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    filterBtns.forEach(b=> b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    projectItems.forEach(item=>{
+      if(f === 'all' || item.dataset.cat === f){
+        item.classList.remove('project-hidden');
+      } else {
+        item.classList.add('project-hidden');
+      }
+    });
+  });
+});
+
+// Contact form fake submit
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  if(!form.checkValidity()){ form.reportValidity(); return; }
+  document.getElementById('formSuccess').classList.remove('d-none');
+  form.querySelectorAll('input,textarea,select').forEach(i=> i.disabled = true);
+  form.querySelector('button[type="submit"]').textContent = 'در حال ارسال...';
+  setTimeout(()=>{ form.querySelector('button[type="submit"]').textContent = 'درخواست ارسال شد ✓'; },600);
+});
+</script>
+</body>
+</html>

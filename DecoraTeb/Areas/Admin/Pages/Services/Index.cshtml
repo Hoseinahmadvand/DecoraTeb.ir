@@ -1,0 +1,129 @@
+﻿@page
+@model DecoraTeb.Areas.Admin.Pages.Services.IndexModel
+@{
+}
+
+<div class="card col-12">
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h3>مدیریت خدمات </h3>
+
+    <a asp-page="Create"
+       class="btn btn-success">
+
+        <i class="bi bi-plus-lg"></i>
+
+        خدمات جدید
+
+    </a>
+
+</div>
+
+<hr />
+
+
+<table class="table table-hover align-middle">
+
+    <thead>
+
+        <tr>
+
+            <th>تصویر</th>
+
+            <th>عنوان</th>
+            <th>ترتیب</th>
+            <th>فعال</th>
+     
+
+            <th></th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @if(Model.ServiceLists != null)
+        {
+            
+        
+        @foreach (var item in Model.ServiceLists)
+        {
+            <tr>
+
+              
+
+                <td>
+
+                    @item.Title
+
+                </td>
+
+
+                <td>
+
+                    @item.SortOrder
+
+                </td>
+
+                <td>
+
+                    @if (item.IsActive)
+                    {
+                        <span class="badge bg-success">
+
+                            بله
+
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">
+
+                            خیر
+
+                        </span>
+                    }
+
+                </td>
+
+               
+
+                <td>
+
+                    <a asp-page="Edit"
+                       asp-route-id="@item.Id"
+                       class="btn btn-warning btn-sm">
+
+                        ویرایش
+
+                    </a>
+
+                    <form method="post"
+                          asp-page-handler="Delete"
+                          asp-route-id="@item.Id"
+                          class="d-inline">
+
+                        <button class="btn btn-danger btn-sm"
+                                onclick="return confirm('حذف شود؟')">
+
+                            حذف
+
+                        </button>
+
+                    </form>
+
+                </td>
+
+                </tr>
+            }
+
+        }
+        else
+        {
+              <td>خالی</td>
+        }
+    </tbody>
+
+</table>
+
+</div>

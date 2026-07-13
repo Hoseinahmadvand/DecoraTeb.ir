@@ -1,4 +1,16 @@
-﻿@page
+﻿@page "{slug}"
 @model DecoraTeb.Pages.ProjectDetailModel
+
 @{
+    ViewData["Title"] = Model.Project.Title;
 }
+
+<partial name="Shared/ProjectPartials/_Header" model="Model.Project" />
+
+<partial name="Shared/ProjectPartials/_FeaturedImage" model="Model.Project" />
+
+<partial name="Shared/ProjectPartials/_Content" model="Model.Project" />
+
+<partial name="Shared/ProjectPartials/_RelatedProjects" model="Model.Project" />
+
+<partial name="Shared/ProjectPartials/_CTA" />

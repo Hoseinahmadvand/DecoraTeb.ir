@@ -30,8 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Pages\Project\" />
-    <Folder Include="Areas\Admin\Pages\Services\" />
     <Folder Include="Dtos\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
