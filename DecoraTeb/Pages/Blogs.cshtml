@@ -42,7 +42,8 @@
                             <div class="blog-meta mb-2"><i class="bi bi-calendar3 me-1"></i> @item.PublishDate.ToShamsi()</div>
                             <h5>@item.Title</h5>
                             <p>@item.Summary</p>
-                            <a href="#" class="text-forest fw-bold text-decoration-none">ادامه مطلب <i class="bi bi-arrow-left"></i></a>
+                            <a asp-page="/BlogDetail"
+                               asp-route-slug="@item.Slug" class="text-forest fw-bold text-decoration-none">ادامه مطلب <i class="bi bi-arrow-left"></i></a>
                         </div>
                     </div>
                 </div>

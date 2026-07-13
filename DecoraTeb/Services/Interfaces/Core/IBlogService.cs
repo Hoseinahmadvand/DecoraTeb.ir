@@ -7,7 +7,7 @@ public interface IBlogService
 {
     Task<List<BlogListItemVm>> GetAllAsync();
 
-    Task<BlogDetailsVm?> GetByIdAsync(long id);
+    Task<BlogDetailVm?> GetByIdAsync(long id);
 
     Task<UpdateBlogVm?> GetForEditAsync(long id);
 
@@ -21,7 +21,9 @@ public interface IBlogService
 
     Task<List<BlogListItemVm>> SearchAsync(string keyword);
 
-    Task<BlogDetailsVm?> GetBySlugAsync(string slug);
+    Task<BlogDetailVm?> GetBySlugAsync(string slug);
+
+    Task<BlogDetailVm?> GetDetailAsync(string slug);
 }
 
 

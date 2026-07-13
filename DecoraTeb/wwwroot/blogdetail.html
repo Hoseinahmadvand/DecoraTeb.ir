@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>۷ اصل نورپردازی اتاق معاینه | بلاگ دکوراطب</title>
+<meta name="description" content="راهنمای کامل اصول نورپردازی درمانی برای اتاق معاینه و اتاق انتظار">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style>
+
+:root{
+  --ink:#16241f;
+  --forest:#1f4b3f;
+  --forest-light:#2e6e5a;
+  --forest-pale:#e7efe9;
+  --ivory:#f7f2e9;
+  --paper:#fbf8f2;
+  --copper:#be7c4d;
+  --copper-light:#e0a875;
+  --sage:#a9bfae;
+  --gold:#c9a66b;
+  --white:#ffffff;
+  --line:rgba(22,36,31,0.1);
+  --shadow-soft:0 20px 50px -20px rgba(22,36,31,0.25);
+  --radius:18px;
+  --ff-body:'Vazirmatn', sans-serif;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--ff-body);
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+::selection{background:var(--copper);color:var(--white);}
+
+h1,h2,h3,h4,.display-font{
+  font-family:var(--ff-body);
+  font-weight:800;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8rem;font-weight:700;letter-spacing:.06em;
+  color:var(--copper);
+  text-transform:uppercase;
+}
+.eyebrow::before{
+  content:"";width:26px;height:2px;background:var(--copper);display:inline-block;
+}
+.section-pad{padding:96px 0;}
+@media(max-width:768px){.section-pad{padding:64px 0;}}
+.bg-ivory{background:var(--ivory);}
+.bg-forest{background:var(--forest);color:var(--ivory);}
+.bg-forest h2,.bg-forest h3,.bg-forest .display-font{color:var(--ivory);}
+.text-copper{color:var(--copper)!important;}
+.text-forest{color:var(--forest)!important;}
+.divider-gold{width:70px;height:3px;background:linear-gradient(90deg,var(--copper),var(--gold));border-radius:3px;}
+
+/* blueprint grid texture */
+.blueprint-bg{
+  background-image:
+    linear-gradient(rgba(31,75,63,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31,75,63,0.06) 1px, transparent 1px);
+  background-size:36px 36px;
+}
+.blueprint-bg-dark{
+  background-image:
+    linear-gradient(rgba(247,242,233,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,242,233,0.07) 1px, transparent 1px);
+  background-size:36px 36px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar-custom{
+  position:fixed;top:0;right:0;left:0;z-index:1050;
+  padding:22px 0;
+  transition:all .35s ease;
+  background:transparent;
+}
+.navbar-custom.scrolled{
+  padding:12px 0;
+  background:rgba(251,248,242,0.9);
+  backdrop-filter:blur(10px);
+  box-shadow:0 4px 24px rgba(22,36,31,0.08);
+}
+.nav-brand{
+  font-weight:800;font-size:1.4rem;color:var(--ivory)!important;
+  display:flex;align-items:center;gap:10px;
+  transition:color .35s ease;
+}
+.navbar-custom.scrolled .nav-brand{color:var(--ink)!important;}
+.navbar-toggler{color:var(--ivory);border-color:rgba(247,242,233,0.4)!important;}
+.navbar-custom.scrolled .navbar-toggler{color:var(--ink);border-color:rgba(22,36,31,0.2)!important;}
+@media(max-width:991px){
+  .navbar-collapse.show{
+    background:var(--forest);border-radius:16px;margin-top:14px;padding:10px 20px 18px;
+  }
+  .navbar-collapse.show .nav-link{color:var(--ivory)!important;}
+}
+.nav-brand .brand-mark{
+  width:38px;height:38px;border-radius:9px;
+  background:linear-gradient(135deg,var(--forest),var(--forest-light));
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ivory);font-weight:800;font-size:1.05rem;
+  transform:rotate(-6deg);
+  box-shadow:0 8px 18px -6px rgba(31,75,63,0.55);
+}
+.navbar-custom .nav-link{
+  font-weight:600;color:var(--ivory)!important;
+  padding:8px 16px!important;position:relative;
+  transition:color .35s ease;
+}
+.navbar-custom.scrolled .nav-link{color:var(--ink)!important;}
+.navbar-custom .nav-link::after{
+  content:"";position:absolute;right:16px;left:16px;bottom:2px;height:2px;
+  background:var(--copper);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.navbar-custom .nav-link:hover::after{transform:scaleX(1);}
+.btn-copper{
+  background:var(--copper);border:none;color:var(--white);
+  font-weight:700;padding:10px 24px;border-radius:50px;
+  transition:all .3s ease;
+  box-shadow:0 10px 24px -8px rgba(190,124,77,0.65);
+}
+.btn-copper:hover{background:#a86a3f;color:#fff;transform:translateY(-2px);box-shadow:0 14px 28px -8px rgba(190,124,77,0.75);}
+.btn-outline-forest{
+  border:1.5px solid var(--forest);color:var(--forest);font-weight:700;
+  border-radius:50px;padding:10px 24px;background:transparent;transition:.3s;
+}
+.btn-outline-forest:hover{background:var(--forest);color:var(--ivory);}
+.btn-outline-ivory{
+  border:1.5px solid rgba(247,242,233,0.5);color:var(--ivory);font-weight:700;
+  border-radius:50px;padding:10px 24px;background:transparent;transition:.3s;
+}
+.btn-outline-ivory:hover{background:var(--ivory);color:var(--forest);border-color:var(--ivory);}
+
+/* ===== HERO SLIDER BANNER ===== */
+.hero-slider{
+  position:relative;
+  height:92vh;
+  min-height:640px;
+  margin-top:0;
+  overflow:hidden;
+  background:var(--ink);
+}
+@media(max-width:768px){.hero-slider{height:auto;min-height:auto;padding-top:130px;padding-bottom:150px;}}
+
+.hs-track{position:relative;height:100%;width:100%;}
+.hs-slide{
+  position:absolute;inset:0;
+  opacity:0;visibility:hidden;
+  transition:opacity 1s ease;
+  z-index:1;
+}
+.hs-slide.active{opacity:1;visibility:visible;z-index:2;}
+@media(max-width:768px){.hs-slide{position:relative;display:none;height:auto;padding:20px 0 40px;}
+  .hs-slide.active{display:block;}
+}
+
+.hs-media{
+  position:absolute;inset:0;overflow:hidden;
+}
+@media(max-width:768px){.hs-media{position:relative;height:340px;border-radius:22px;margin:0 16px;overflow:hidden;}}
+.hs-media .hs-img,
+.hs-media .hs-placeholder{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform:scale(1.12);
+  transition:transform 8s ease-out;
+}
+.hs-slide.active .hs-img,
+.hs-slide.active .hs-placeholder{transform:scale(1);}
+.hs-placeholder{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  color:rgba(247,242,233,0.55);
+  border:2px dashed rgba(247,242,233,0.22);
+}
+.hs-placeholder i{font-size:2.6rem;}
+.hs-placeholder span{font-size:.85rem;font-weight:600;max-width:260px;text-align:center;}
+
+.hs-media::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(85deg, rgba(15,26,22,0.92) 8%, rgba(15,26,22,0.55) 42%, rgba(15,26,22,0.15) 68%);
+  z-index:2;
+}
+@media(max-width:768px){.hs-media::before{background:linear-gradient(0deg, rgba(15,26,22,0.85) 10%, rgba(15,26,22,0.15) 60%);}}
+
+/* organic bottom shape cut */
+.hs-shape{
+  position:absolute;bottom:-2px;left:0;right:0;z-index:5;line-height:0;
+}
+.hs-shape svg{width:100%;height:90px;display:block;}
+@media(max-width:768px){.hs-shape{display:none;}}
+
+.hs-content{
+  position:relative;z-index:6;height:100%;
+  display:flex;align-items:center;
+}
+@media(max-width:768px){.hs-content{height:auto;padding:0 34px;margin-top:22px;}}
+.hs-num{
+  font-size:.8rem;font-weight:800;color:var(--copper-light);letter-spacing:.08em;
+  display:flex;align-items:center;gap:10px;margin-bottom:16px;
+}
+.hs-num::after{content:"";width:38px;height:1px;background:rgba(247,242,233,0.35);}
+.hs-tagpill{
+  display:inline-block;background:var(--copper);color:#fff;font-size:.72rem;font-weight:800;
+  padding:5px 14px;border-radius:50px;margin-bottom:16px;
+}
+.hs-content h1{
+  color:var(--ivory);font-size:clamp(2.1rem,4.2vw,3.35rem);line-height:1.22;
+  max-width:620px;margin-bottom:18px;
+}
+.hs-content p{color:rgba(247,242,233,0.72);max-width:460px;font-size:1.05rem;line-height:1.9;margin-bottom:28px;}
+
+/* custom side progress indicators (vertical dashes, right side) */
+.hs-indicators{
+  position:absolute;top:50%;left:24px;transform:translateY(-50%);z-index:7;
+  display:flex;flex-direction:column;gap:14px;
+}
+@media(max-width:991px){.hs-indicators{display:none;}}
+.hs-dash{
+  width:34px;height:3px;border-radius:3px;background:rgba(247,242,233,0.3);border:none;
+  cursor:pointer;transition:.3s;position:relative;
+}
+.hs-dash.active{background:var(--copper);width:50px;}
+
+/* arrows */
+.hs-arrows{position:absolute;bottom:28px;left:24px;z-index:7;display:flex;gap:10px;}
+@media(max-width:768px){.hs-arrows{bottom:16px;}}
+.hs-arrow{
+  width:44px;height:44px;border-radius:50%;border:1px solid rgba(247,242,233,0.3);
+  background:rgba(247,242,233,0.06);backdrop-filter:blur(6px);
+  color:var(--ivory);display:flex;align-items:center;justify-content:center;transition:.25s;
+}
+.hs-arrow:hover{background:var(--copper);border-color:var(--copper);}
+
+/* slide counter */
+.hs-counter{
+  position:absolute;bottom:34px;right:24px;z-index:7;color:rgba(247,242,233,0.6);
+  font-size:.85rem;font-weight:700;display:flex;align-items:center;gap:8px;
+}
+@media(max-width:768px){.hs-counter{display:none;}}
+.hs-counter b{color:var(--ivory);font-size:1.15rem;}
+
+/* floating stat card overlapping the wave */
+.hero-stats-float{
+  position:relative;z-index:8;margin-top:-64px;
+}
+@media(max-width:768px){.hero-stats-float{margin-top:-120px;}}
+.hero-stats-card{
+  background:var(--white);border-radius:22px;
+  box-shadow:0 30px 60px -20px rgba(22,36,31,0.35);
+  padding:26px 20px;
+}
+.hero-stats-card .stat-num{font-size:1.9rem;font-weight:800;color:var(--forest);}
+.hero-stats-card .stat-label{font-size:.8rem;color:#5c6a64;font-weight:600;}
+.hero-stats-card .vr-line{width:1px;background:var(--line);}
+
+/* ===== SERVICES ===== */
+.card-3d-wrap{perspective:1200px;}
+.service-card{
+  background:var(--white);
+  border-radius:var(--radius);
+  padding:34px 28px;
+  height:100%;
+  border:1px solid var(--line);
+  transition:box-shadow .35s ease, transform .1s ease;
+  transform-style:preserve-3d;
+  will-change:transform;
+  position:relative;
+  overflow:hidden;
+}
+.service-card::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(190,124,77,0.06),transparent 60%);
+  opacity:0;transition:opacity .3s ease;
+}
+.service-card:hover::before{opacity:1;}
+.service-card:hover{box-shadow:0 30px 60px -20px rgba(22,36,31,0.28);}
+.service-icon{
+  width:58px;height:58px;border-radius:14px;
+  background:var(--forest-pale);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;color:var(--forest);
+  margin-bottom:20px;
+  transform:translateZ(30px);
+}
+.service-card h4{font-size:1.15rem;transform:translateZ(20px);}
+.service-card p{color:#5c6a64;font-size:.94rem;line-height:1.9;transform:translateZ(15px);}
+.service-num{
+  position:absolute;top:20px;left:24px;font-size:.75rem;font-weight:800;
+  color:rgba(31,75,63,0.25);
+}
+
+/* ===== PROCESS ===== */
+.process-line{
+  position:relative;
+}
+.process-line::before{
+  content:"";position:absolute;top:26px;right:8%;left:8%;height:2px;
+  background:repeating-linear-gradient(90deg,var(--copper) 0 8px, transparent 8px 16px);
+}
+@media(max-width:768px){.process-line::before{display:none;}}
+.process-step{position:relative;text-align:center;}
+.process-badge{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--forest);color:var(--ivory);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;margin:0 auto 20px;position:relative;z-index:2;
+  box-shadow:0 12px 24px -8px rgba(31,75,63,0.5);
+}
+.process-step h5{font-weight:800;}
+.process-step p{color:#5c6a64;font-size:.9rem;max-width:220px;margin:8px auto 0;}
+
+/* ===== PROJECTS ===== */
+.filter-pills .btn{
+  border-radius:50px;border:1px solid var(--line);color:var(--ink);
+  font-weight:600;font-size:.88rem;padding:8px 20px;background:var(--white);
+  margin:4px;transition:.25s;
+}
+.filter-pills .btn.active{background:var(--forest);color:var(--ivory);border-color:var(--forest);}
+.project-card{
+  border-radius:var(--radius);overflow:hidden;position:relative;
+  height:320px;cursor:pointer;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s ease;
+}
+.project-card:hover{transform:translateY(-10px) rotateX(4deg);box-shadow:0 40px 70px -25px rgba(22,36,31,0.4);}
+.project-visual{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(22,36,31,0.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(22,36,31,0.06) 1px,transparent 1px);
+  background-size:24px 24px;
+  transition:transform .6s ease;
+}
+.project-card:hover .project-visual{transform:scale(1.08);}
+.project-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(22,36,31,0.92) 5%, rgba(22,36,31,0.15) 55%, transparent 80%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:var(--ivory);
+}
+.project-tag{
+  display:inline-block;background:rgba(247,242,233,0.15);
+  padding:4px 14px;border-radius:50px;font-size:.72rem;font-weight:700;margin-bottom:10px;width:fit-content;
+  backdrop-filter:blur(6px);
+}
+.project-hidden{display:none!important;}
+
+/* ===== MOBILE SCROLL-SNAP SLIDER (projects & blog) ===== */
+.swipe-hint{
+  display:none;align-items:center;gap:8px;color:#8a958f;font-size:.82rem;font-weight:600;margin:-10px 0 18px;
+}
+.swipe-hint i{font-size:1rem;color:var(--copper);}
+@media(max-width:768px){
+  .swipe-hint{display:flex;}
+  .mobile-slider{
+    display:flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    margin-inline:calc(-1 * var(--bs-gutter-x, .75rem)) ;
+    padding-inline:20px;
+    padding-bottom:10px;
+  }
+  .mobile-slider::-webkit-scrollbar{display:none;}
+  .mobile-slider > *{
+    flex:0 0 78%;
+    max-width:78%;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+  .mobile-slider .project-card{height:280px;}
+}
+@media(max-width:420px){
+  .mobile-slider > *{flex-basis:86%;max-width:86%;}
+}
+
+/* ===== TESTIMONIALS ===== */
+.testi-card{
+  background:var(--white);border-radius:var(--radius);padding:40px;
+  border:1px solid var(--line);
+  max-width:700px;margin:0 auto;text-align:center;
+}
+.testi-quote{font-size:1.2rem;line-height:2;color:var(--ink);font-weight:500;}
+.testi-avatar{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,var(--copper),var(--gold));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;
+  margin:0 auto 12px;
+}
+.carousel-indicators [data-bs-target]{background:var(--copper);}
+
+/* ===== BLOG ===== */
+.blog-card{
+  border-radius:var(--radius);overflow:hidden;background:var(--white);
+  border:1px solid var(--line);height:100%;transition:.35s;
+}
+.blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);}
+.blog-thumb{
+  height:180px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--forest),var(--forest-light));
+}
+.blog-thumb::after{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.08) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+.blog-cat{
+  position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.92);
+  color:var(--forest);font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:50px;z-index:2;
+}
+.blog-body{padding:22px;}
+.blog-body h5{font-weight:800;font-size:1.05rem;}
+.blog-body p{color:#5c6a64;font-size:.89rem;}
+.blog-meta{font-size:.78rem;color:#8a958f;}
+
+/* ===== CTA BAND ===== */
+.cta-band{
+  background:linear-gradient(120deg,var(--forest) 0%, #163b31 100%);
+  border-radius:28px;padding:56px;position:relative;overflow:hidden;color:var(--ivory);
+}
+.cta-band::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle at 90% 20%, rgba(190,124,77,0.35), transparent 45%);
+}
+
+/* ===== CONTACT ===== */
+.contact-info-item{
+  display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line);
+}
+.contact-icon{
+  width:44px;height:44px;border-radius:12px;background:var(--forest-pale);color:var(--forest);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.form-control-custom{
+  border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;font-size:.95rem;
+}
+.form-control-custom:focus{border-color:var(--forest-light);box-shadow:0 0 0 3px rgba(46,110,90,0.15);}
+
+/* ===== FOOTER ===== */
+footer{background:var(--ink);color:rgba(247,242,233,0.75);padding:64px 0 24px;}
+footer h6{color:var(--ivory);font-weight:800;margin-bottom:18px;}
+footer a{color:rgba(247,242,233,0.65);text-decoration:none;transition:.2s;}
+footer a:hover{color:var(--copper);}
+.footer-social{
+  width:38px;height:38px;border-radius:50%;border:1px solid rgba(247,242,233,0.2);
+  display:flex;align-items:center;justify-content:center;color:var(--ivory);transition:.25s;
+}
+.footer-social:hover{background:var(--copper);border-color:var(--copper);}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* back to top */
+#backTop{
+  position:fixed;bottom:26px;left:26px;z-index:1000;
+  width:46px;height:46px;border-radius:50%;background:var(--forest);color:var(--ivory);
+  display:flex;align-items:center;justify-content:center;border:none;
+  opacity:0;pointer-events:none;transition:.3s;box-shadow:0 12px 24px -8px rgba(31,75,63,0.6);
+}
+#backTop.show{opacity:1;pointer-events:auto;}
+
+/* ===== PAGE HEADER (inner pages) ===== */
+.page-header{
+  position:relative;background:linear-gradient(120deg,var(--ink) 0%, var(--forest) 100%);
+  padding:170px 0 100px;overflow:hidden;color:var(--ivory);
+}
+@media(max-width:768px){.page-header{padding:150px 0 80px;}}
+.page-header::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% 20%, rgba(190,124,77,0.25), transparent 50%);}
+.page-crumb{display:flex;align-items:center;gap:8px;font-size:.85rem;color:rgba(247,242,233,0.65);margin-bottom:18px;position:relative;z-index:2;flex-wrap:wrap;}
+.page-crumb a{color:rgba(247,242,233,0.65);text-decoration:none;}
+.page-crumb a:hover{color:var(--copper-light);}
+.page-crumb .sep{color:var(--copper-light);}
+.page-header h1{position:relative;z-index:2;font-size:clamp(2.1rem,4vw,3.1rem);margin-bottom:14px;color:var(--ivory);}
+.page-header p{position:relative;z-index:2;color:rgba(247,242,233,0.75);max-width:580px;font-size:1.05rem;line-height:1.9;}
+.page-header .hs-shape{position:absolute;bottom:-2px;left:0;right:0;z-index:3;line-height:0;}
+.page-header .hs-shape svg{width:100%;height:70px;display:block;}
+
+/* ===== TIMELINE (about) ===== */
+.timeline{position:relative;}
+.timeline::before{content:"";position:absolute;top:4px;bottom:4px;right:23px;width:2px;background:var(--line);}
+@media(max-width:576px){.timeline::before{right:19px;}}
+.timeline-item{position:relative;padding-right:64px;margin-bottom:38px;}
+.timeline-item:last-child{margin-bottom:0;}
+.timeline-dot{
+  position:absolute;right:6px;top:2px;width:36px;height:36px;border-radius:50%;
+  background:var(--forest);color:var(--ivory);display:flex;align-items:center;justify-content:center;
+  font-size:.78rem;font-weight:800;z-index:2;box-shadow:0 0 0 6px var(--paper);
+}
+.timeline-item h5{font-weight:800;margin-bottom:4px;}
+.timeline-item .timeline-year{color:var(--copper);font-weight:800;font-size:.85rem;margin-bottom:6px;display:block;}
+.timeline-item p{color:#5c6a64;font-size:.92rem;margin-bottom:0;}
+
+/* ===== TEAM ===== */
+.team-card{background:var(--white);border-radius:var(--radius);padding:30px 24px;text-align:center;border:1px solid var(--line);transition:.3s;height:100%;}
+.team-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);}
+.team-avatar{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--forest),var(--forest-light));color:var(--ivory);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem;margin:0 auto 16px;}
+.team-role{color:var(--copper);font-size:.85rem;font-weight:700;margin-bottom:10px;}
+.team-social{display:flex;gap:8px;justify-content:center;margin-top:14px;}
+.team-social a{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--forest);transition:.2s;}
+.team-social a:hover{background:var(--forest);color:var(--ivory);border-color:var(--forest);}
+
+/* ===== FAQ ACCORDION ===== */
+.accordion-custom .accordion-item{border:1px solid var(--line)!important;border-radius:14px!important;overflow:hidden;margin-bottom:14px;}
+.accordion-custom .accordion-button{font-weight:700;background:var(--white);padding:18px 22px;}
+.accordion-custom .accordion-button:not(.collapsed){color:var(--forest);background:var(--forest-pale);box-shadow:none;}
+.accordion-custom .accordion-button:focus{box-shadow:none;border-color:var(--line);}
+.accordion-custom .accordion-body{padding:2px 22px 22px;color:#5c6a64;line-height:1.9;font-size:.94rem;}
+
+/* ===== MAP PLACEHOLDER ===== */
+.map-placeholder{
+  height:360px;border-radius:var(--radius);
+  background:var(--forest-pale);
+  background-image:linear-gradient(rgba(31,75,63,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(31,75,63,0.08) 1px,transparent 1px);
+  background-size:28px 28px;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--forest);
+  border:1px solid var(--line);position:relative;overflow:hidden;text-align:center;padding:20px;
+}
+.map-placeholder i.pin-icon{font-size:2.2rem;color:var(--copper);}
+.map-placeholder span{font-size:.85rem;font-weight:600;color:#4b5a54;max-width:260px;}
+
+/* ===== WORKING HOURS ===== */
+.hours-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:.92rem;}
+.hours-row:last-child{border-bottom:none;}
+
+/* ===== NEWSLETTER BAND ===== */
+.newsletter-band{background:linear-gradient(120deg,var(--forest) 0%, #163b31 100%);border-radius:26px;padding:50px;color:var(--ivory);position:relative;overflow:hidden;}
+.newsletter-band::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 30%, rgba(190,124,77,0.3), transparent 45%);}
+.newsletter-band input{border:none;border-radius:50px;padding:14px 22px;width:100%;font-family:var(--ff-body);}
+.newsletter-band input:focus{outline:2px solid var(--copper);}
+
+/* ===== PAGINATION ===== */
+.pagination-custom{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:36px;}
+.pagination-custom button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--white);font-weight:700;color:var(--ink);transition:.2s;}
+.pagination-custom button.active,.pagination-custom button:hover{background:var(--forest);color:var(--ivory);border-color:var(--forest);}
+
+/* ===== LOAD MORE / MISC BUTTON ===== */
+.btn-loadmore{border:1.5px dashed var(--sage);border-radius:50px;padding:12px 36px;background:transparent;color:var(--forest);font-weight:700;transition:.25s;}
+.btn-loadmore:hover{background:var(--forest);color:var(--ivory);border-style:solid;border-color:var(--forest);}
+
+/* ===== VALUE / ICON ROW (about) ===== */
+.value-row{display:flex;gap:16px;align-items:flex-start;}
+.value-icon{width:48px;height:48px;border-radius:12px;background:var(--forest-pale);color:var(--forest);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;}
+
+/* nav active underline */
+.navbar-custom .nav-link.active::after{transform:scaleX(1);}
+
+/* ===== DETAIL PAGES ===== */
+.meta-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(247,242,233,0.12);backdrop-filter:blur(6px);color:var(--ivory);padding:6px 16px;border-radius:50px;font-size:.82rem;font-weight:600;margin:4px 6px 4px 0;}
+.meta-chip i{color:var(--copper-light);}
+
+.featured-media{position:relative;z-index:8;margin-top:-70px;}
+.featured-media .media-inner{
+  height:420px;border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(22,36,31,0.35);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:rgba(255,255,255,0.75);
+  border:2px dashed rgba(255,255,255,0.3);
+}
+@media(max-width:768px){.featured-media .media-inner{height:240px;border-radius:18px;}}
+.featured-media .media-inner i{font-size:2.6rem;}
+.featured-media .media-inner span{font-size:.85rem;font-weight:600;}
+
+.sidebar-card{background:var(--white);border-radius:var(--radius);padding:26px;border:1px solid var(--line);position:sticky;top:110px;}
+.sidebar-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:.9rem;gap:12px;}
+.sidebar-row:last-child{border-bottom:none;}
+.sidebar-row span:first-child{color:#8a958f;flex-shrink:0;}
+.sidebar-row span:last-child{font-weight:700;text-align:left;}
+
+.share-row{display:flex;gap:8px;margin-top:16px;}
+.share-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--forest);transition:.2s;flex-shrink:0;}
+.share-btn:hover{background:var(--forest);color:var(--ivory);border-color:var(--forest);}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.gallery-grid .g-item{
+  height:210px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.8);flex-direction:column;gap:6px;font-size:.78rem;font-weight:600;text-align:center;padding:10px;
+  border:2px dashed rgba(255,255,255,0.3);
+}
+@media(max-width:576px){.gallery-grid{grid-template-columns:1fr;}}
+
+.pull-quote{
+  border-right:4px solid var(--copper);background:var(--forest-pale);border-radius:0 16px 16px 0;
+  padding:24px 28px;font-size:1.15rem;font-weight:600;color:var(--forest);line-height:1.9;margin:32px 0;
+}
+
+.article-body h3{margin-top:36px;margin-bottom:14px;font-size:1.35rem;font-weight:800;}
+.article-body p{color:#4b5a54;line-height:2.1;margin-bottom:18px;font-size:1.02rem;}
+.article-body ul{color:#4b5a54;line-height:2;margin-bottom:18px;padding-right:20px;}
+.article-body ul li{margin-bottom:6px;}
+
+.author-box{display:flex;gap:14px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
+.author-box .team-avatar{width:56px;height:56px;font-size:1rem;margin:0;flex-shrink:0;}
+
+.popular-post{display:flex;gap:12px;align-items:center;margin-bottom:16px;text-decoration:none;}
+.popular-post:last-child{margin-bottom:0;}
+.popular-thumb{width:52px;height:52px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,var(--forest),var(--forest-light));}
+.popular-post-title{font-size:.83rem;font-weight:700;color:var(--ink);line-height:1.5;}
+.popular-post-date{font-size:.73rem;color:#8a958f;}
+
+.tag-pill-list a{display:inline-block;background:var(--forest-pale);color:var(--forest);font-size:.8rem;font-weight:600;padding:6px 14px;border-radius:50px;margin:0 4px 8px 0;text-decoration:none;transition:.2s;}
+.tag-pill-list a:hover{background:var(--forest);color:var(--ivory);}
+
+.detail-title-lg{font-size:clamp(1.7rem,3.4vw,2.4rem);}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand nav-brand" href="dekoratebb.html">
+      <span class="brand-mark">دط</span>
+      دکوراطب
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-1 py-3 py-lg-0">
+        <li class="nav-item"><a class="nav-link " href="dekoratebb.html">خانه</a></li>
+        <li class="nav-item"><a class="nav-link " href="about.html">درباره ما</a></li>
+        <li class="nav-item"><a class="nav-link" href="dekoratebb.html#services">خدمات</a></li>
+        <li class="nav-item"><a class="nav-link " href="projects.html">پروژه‌ها</a></li>
+        <li class="nav-item"><a class="nav-link active" href="blog.html">بلاگ</a></li>
+        <li class="nav-item"><a class="nav-link " href="contact.html">تماس با ما</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-copper d-none d-lg-inline-block">مشاوره رایگان</a>
+    </div>
+  </div>
+</nav>
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-header blueprint-bg-dark">
+  <div class="container">
+    <nav class="page-crumb">
+      <a href="dekoratebb.html">خانه</a> <span class="sep">/</span>
+      <a href="blog.html">بلاگ</a> <span class="sep">/</span>
+      <span>۷ اصل نورپردازی اتاق معاینه</span>
+    </nav>
+    <h1 class="detail-title-lg">۷ اصل نورپردازی اتاق معاینه که کمتر کسی می‌داند</h1>
+    <p>تفاوت نور تشخیصی و نور آرامش‌بخش، و نحوه‌ی ترکیب درست آن‌ها در طراحی اتاق معاینه.</p>
+    <div class="mt-3">
+      <span class="meta-chip"><i class="bi bi-person"></i> مینا شریفی</span>
+      <span class="meta-chip"><i class="bi bi-calendar3"></i> ۱۸ تیر ۱۴۰۴</span>
+      <span class="meta-chip"><i class="bi bi-clock"></i> ۶ دقیقه مطالعه</span>
+      <span class="meta-chip"><i class="bi bi-tag"></i> نورپردازی</span>
+    </div>
+  </div>
+  <div class="hs-shape"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,30 C280,80 500,0 760,22 C1040,46 1200,8 1440,38 L1440,70 L0,70 Z" fill="#fbf8f2"></path></svg></div>
+</section>
+
+<!-- ===== FEATURED MEDIA ===== -->
+<div class="container featured-media">
+  <div class="media-inner" style="background:linear-gradient(135deg,#173a30,var(--forest));">
+    <i class="bi bi-image"></i>
+    <span>تصویر شاخص مقاله: نورپردازی اتاق معاینه</span>
+  </div>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-8 reveal">
+        <div class="article-body">
+          <p>نور، یکی از فراموش‌شده‌ترین عناصر در طراحی اتاق معاینه است؛ در حالی که هم روی دقت تشخیص پزشک اثر می‌گذارد و هم روی سطح اضطراب بیمار. در این مقاله، هفت اصل کلیدی نورپردازی درمانی را مرور می‌کنیم که تیم دکوراطب در پروژه‌های خود همیشه رعایت می‌کند.</p>
+
+          <h3>۱. نور تشخیصی را از نور محیطی جدا کنید</h3>
+          <p>اتاق معاینه به دو نوع نور نیاز دارد: نوری با دمای رنگ بالا (نزدیک به نور روز) برای تشخیص دقیق پوست، دندان یا زخم، و نوری ملایم‌تر برای زمانی که پزشک صرفاً در حال صحبت با بیمار است. ترکیب این دو در یک منبع نوری واحد، معمولاً هیچ‌کدام را به‌خوبی پوشش نمی‌دهد.</p>
+
+          <h3>۲. شاخص رندرینگ رنگ (CRI) را جدی بگیرید</h3>
+          <p>برای اتاق‌های معاینه، به‌خصوص در تخصص‌های پوست و دندانپزشکی، پیشنهاد می‌شود از لامپ‌هایی با CRI بالای ۹۰ استفاده شود؛ در غیر این‌صورت رنگ واقعی بافت یا پوست بیمار به‌درستی دیده نمی‌شود.</p>
+
+          <div class="pull-quote">
+            «نوری که تشخیص را دقیق‌تر می‌کند، لزوماً نوری نیست که بیمار را بترساند.»
+          </div>
+
+          <h3>۳. از نور مستقیم در چشم بیمار پرهیز کنید</h3>
+          <p>یکی از رایج‌ترین اشتباهات، قرار دادن چراغ سقفی درست بالای سر بیمار روی تخت معاینه است. این کار باعث خیرگی و ناراحتی می‌شود. نور تشخیصی باید زاویه‌دار و قابل‌تنظیم باشد.</p>
+
+          <h3>۴. نور طبیعی را در طراحی اولیه لحاظ کنید</h3>
+          <p>در صورت وجود پنجره، استفاده از پرده‌های نیمه‌شفاف به‌جای پرده‌های ضخیم، امکان بهره‌گیری از نور روز را بدون از دست دادن حریم خصوصی بیمار فراهم می‌کند.</p>
+
+          <h3>۵. دمای رنگ اتاق انتظار را گرم‌تر انتخاب کنید</h3>
+          <p>بر خلاف اتاق معاینه، اتاق انتظار به نوری با دمای رنگ گرم‌تر (حدود ۳۰۰۰ کلوین) نیاز دارد تا حس آرامش القا کند؛ استفاده از نور سرد در این فضا می‌تواند اضطراب بیمار را افزایش دهد.</p>
+
+          <h3>۶. از نور غیرمستقیم برای کاهش سایه استفاده کنید</h3>
+          <p>ترکیب نور سقفی با نورهای دیواری غیرمستقیم، سایه‌های تیز روی صورت بیمار را کاهش می‌دهد و فضا را حرفه‌ای‌تر نشان می‌دهد.</p>
+
+          <h3>۷. کنترل‌پذیری نور را فراموش نکنید</h3>
+          <p>دیمرهای جداگانه برای هر منطقه از اتاق، به پزشک اجازه می‌دهد بسته به نوع معاینه، شدت نور را تنظیم کند؛ این یک سرمایه‌گذاری کوچک با بازده بالا در تجربه بیمار است.</p>
+
+          <p>رعایت این اصول ساده، بدون نیاز به بودجه بالا، می‌تواند تفاوت محسوسی در کیفیت تشخیص و آرامش بیمار ایجاد کند. اگر برای اتاق معاینه خود به مشاوره نورپردازی نیاز دارید، تیم دکوراطب آماده همکاری است.</p>
+
+          <div class="tag-pill-list mt-4">
+            <a href="blog.html">نورپردازی</a>
+            <a href="blog.html">اتاق معاینه</a>
+            <a href="blog.html">طراحی درمانی</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 reveal">
+        <div class="author-box mb-4">
+          <div class="team-avatar">م.ش</div>
+          <div>
+            <h6 class="fw-bold mb-1">مینا شریفی</h6>
+            <div class="small text-secondary">طراح نور در دکوراطب</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card mb-4">
+          <h6 class="fw-bold mb-3">اشتراک‌گذاری مقاله</h6>
+          <div class="share-row mt-0">
+            <a href="#" class="share-btn"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="share-btn"><i class="bi bi-telegram"></i></a>
+            <a href="#" class="share-btn"><i class="bi bi-whatsapp"></i></a>
+            <a href="#" class="share-btn"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h6 class="fw-bold mb-3">مقالات محبوب</h6>
+          <a href="blogdetail.html" class="popular-post">
+            <div class="popular-thumb" style="background:linear-gradient(135deg,var(--copper),var(--gold));"></div>
+            <div>
+              <div class="popular-post-title">چگونه مسیر حرکت بیمار را کوتاه‌تر کنیم</div>
+              <div class="popular-post-date">۵ تیر ۱۴۰۴</div>
+            </div>
+          </a>
+          <a href="blogdetail.html" class="popular-post">
+            <div class="popular-thumb" style="background:linear-gradient(135deg,var(--sage),var(--forest-light));"></div>
+            <div>
+              <div class="popular-post-title">راهنمای انتخاب کفپوش ضدعفونی‌پذیر</div>
+              <div class="popular-post-date">۲۲ خرداد ۱۴۰۴</div>
+            </div>
+          </a>
+          <a href="blogdetail.html" class="popular-post">
+            <div class="popular-thumb" style="background:linear-gradient(135deg,#173a30,var(--forest));"></div>
+            <div>
+              <div class="popular-post-title">استانداردهای بهداشتی فراموش‌شده در مطب</div>
+              <div class="popular-post-date">۱۰ خرداد ۱۴۰۴</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RELATED POSTS ===== -->
+<section class="section-pad bg-ivory blueprint-bg">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="eyebrow justify-content-center d-inline-flex">مقالات مرتبط</span>
+      <h2 class="mt-3">ادامه مطالعه</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal">
+        <a href="blogdetail.html" class="text-decoration-none text-reset">
+          <div class="blog-card">
+            <div class="blog-thumb" style="background:linear-gradient(135deg,var(--copper),var(--gold));"><span class="blog-cat">چیدمان</span></div>
+            <div class="blog-body">
+              <div class="blog-meta mb-2"><i class="bi bi-calendar3 me-1"></i> ۵ تیر ۱۴۰۴</div>
+              <h5>چگونه مسیر حرکت بیمار را کوتاه‌تر و امن‌تر کنیم</h5>
+              <p>اصول ترافیک داخلی برای کلینیک‌های شلوغ و کم‌متراژ.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <a href="blogdetail.html" class="text-decoration-none text-reset">
+          <div class="blog-card">
+            <div class="blog-thumb" style="background:linear-gradient(135deg,var(--sage),var(--forest-light));"><span class="blog-cat">متریال</span></div>
+            <div class="blog-body">
+              <div class="blog-meta mb-2"><i class="bi bi-calendar3 me-1"></i> ۲۲ خرداد ۱۴۰۴</div>
+              <h5>راهنمای انتخاب کفپوش ضدعفونی‌پذیر برای مطب</h5>
+              <p>مقایسه متریال‌های رایج از نظر دوام، بهداشت و هزینه.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <a href="blogdetail.html" class="text-decoration-none text-reset">
+          <div class="blog-card">
+            <div class="blog-thumb" style="background:linear-gradient(135deg,#173a30,var(--forest));"><span class="blog-cat">بهداشت</span></div>
+            <div class="blog-body">
+              <div class="blog-meta mb-2"><i class="bi bi-calendar3 me-1"></i> ۱۰ خرداد ۱۴۰۴</div>
+              <h5>استانداردهای بهداشتی که در طراحی مطب فراموش می‌شوند</h5>
+              <p>از تهویه هوا تا فاصله استاندارد میان صندلی‌های انتظار.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="pb-5">
+  <div class="container">
+    <div class="newsletter-band reveal">
+      <div class="row align-items-center position-relative">
+        <div class="col-lg-6">
+          <h2 class="mb-2">مقالات تازه را زودتر از همه بخوانید</h2>
+          <p class="mb-0 opacity-75">عضو خبرنامه دکوراطب شوید تا جدیدترین راهنماهای طراحی فضای درمانی را دریافت کنید.</p>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <form class="d-flex gap-2 flex-wrap flex-sm-nowrap position-relative" onsubmit="return false;">
+            <input type="email" placeholder="ایمیل شما" required>
+            <button type="submit" class="btn btn-copper flex-shrink-0">عضویت</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <a class="nav-brand mb-3 d-flex" href="dekoratebb.html" style="color:var(--ivory)!important;">
+          <span class="brand-mark">دط</span> دکوراطب
+        </a>
+        <p class="small">استودیو تخصصی طراحی و اجرای داخلی مطب، کلینیک و مراکز درمانی در سراسر ایران.</p>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>دسترسی سریع</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="about.html">درباره ما</a></li>
+          <li><a href="dekoratebb.html#services">خدمات</a></li>
+          <li><a href="projects.html">پروژه‌ها</a></li>
+          <li><a href="blog.html">بلاگ</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-6">
+        <h6>خدمات</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="dekoratebb.html#services">طراحی مطب دندانپزشکی</a></li>
+          <li><a href="dekoratebb.html#services">کلینیک پوست و زیبایی</a></li>
+          <li><a href="dekoratebb.html#services">نورپردازی درمانی</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h6>ما را دنبال کنید</h6>
+        <div class="d-flex gap-2 mb-3">
+          <a href="#" class="footer-social"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="footer-social"><i class="bi bi-telegram"></i></a>
+          <a href="#" class="footer-social"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4" style="border-color:rgba(247,242,233,0.15);">
+    <div class="d-flex flex-wrap justify-content-between small">
+      <span>© ۱۴۰۴ دکوراطب. تمامی حقوق محفوظ است.</span>
+      <span>طراحی‌شده با <i class="bi bi-heart-fill text-copper"></i> برای فضاهای درمانی</span>
+    </div>
+  </div>
+</footer>
+
+<button id="backTop"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Navbar scroll state
+const nav = document.getElementById('mainNav');
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', ()=>{
+  if(window.scrollY > 40){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+  if(window.scrollY > 500){ backTop.classList.add('show'); } else { backTop.classList.remove('show'); }
+});
+backTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+// close mobile menu on link click
+document.querySelectorAll('#navMenu .nav-link').forEach(l=>{
+  l.addEventListener('click', ()=>{
+    const menu = document.getElementById('navMenu');
+    if(menu.classList.contains('show')){
+      bootstrap.Collapse.getOrCreateInstance(menu).hide();
+    }
+  });
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+},{threshold:0.15});
+reveals.forEach(el=> io.observe(el));
+
+// Counter animation
+const counters = document.querySelectorAll('.stat-num');
+const counterIO = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el = e.target;
+      const target = parseInt(el.dataset.count,10);
+      let cur = 0;
+      const step = Math.max(1, Math.round(target/50));
+      const timer = setInterval(()=>{
+        cur += step;
+        if(cur >= target){ cur = target; clearInterval(timer); }
+        el.textContent = cur.toLocaleString('fa-IR');
+      }, 25);
+      counterIO.unobserve(el);
+    }
+  });
+},{threshold:0.5});
+counters.forEach(c=> counterIO.observe(c));
+
+// 3D tilt on cards
+const tiltCards = document.querySelectorAll('.tilt-card');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduceMotion){
+  tiltCards.forEach(card=>{
+    card.addEventListener('mousemove', (e)=>{
+      const r = card.getBoundingClientRect();
+      const x = e.clientX - r.left; const y = e.clientY - r.top;
+      const rx = ((y / r.height) - 0.5) * -12;
+      const ry = ((x / r.width) - 0.5) * 12;
+      card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave', ()=>{
+      card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateY(0)';
+    });
+  });
+}
+
+// Generic category filter (projects / blog)
+const filterBtns = document.querySelectorAll('.filter-pills .btn');
+const filterItems = document.querySelectorAll('.project-item');
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    filterBtns.forEach(b=> b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    filterItems.forEach(item=>{
+      if(f === 'all' || item.dataset.cat === f){
+        item.classList.remove('project-hidden');
+      } else {
+        item.classList.add('project-hidden');
+      }
+    });
+  });
+});
+
+document.querySelectorAll('.newsletter-band form').forEach(f=>{
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = f.querySelector('button');
+    btn.textContent = 'عضو شدید ✓';
+    btn.disabled = true;
+  });
+});
+
+</script>
+</body>
+</html>

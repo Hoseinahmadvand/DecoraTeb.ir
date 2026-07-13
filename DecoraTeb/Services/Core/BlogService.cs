@@ -43,11 +43,11 @@ public class BlogService : CrudService<Blog>, IBlogService
             .ToListAsync();
     }
 
-    public async Task<BlogDetailsVm?> GetByIdAsync(long id)
+    public async Task<BlogDetailVm?> GetByIdAsync(long id)
     {
         var entity = await base.GetByIdAsync(id);
 
-        return entity == null ? null : ToDetailsVm(entity);
+        return new BlogDetailVm() ;
     }
 
     public async Task<UpdateBlogVm?> GetForEditAsync(long id)
@@ -89,6 +89,53 @@ public class BlogService : CrudService<Blog>, IBlogService
 
     #endregion
 
+    public async Task<BlogDetailVm?> GetDetailAsync(string slug)
+    {
+        var blog = await Table<Blog>()
+            .Include(x => x.Category)
+            .FirstOrDefaultAsync(x => x.Slug == slug);
+
+        if (blog == null)
+            return null;
+
+        var related = await Table<Blog>()
+            .Include(x => x.Category)
+            .Where(x => x.BlogCategoryId == blog.BlogCategoryId &&
+                        x.Id != blog.Id)
+            .OrderByDescending(x => x.CreateAt)
+            .Take(3)
+            .ToListAsync();
+
+        return new BlogDetailVm
+        {
+            Id = blog.Id,
+            Title = blog.Title,
+            Slug = blog.Slug,
+            Summary = blog.Summery,
+            Description = blog.Content,
+            Image = blog.Image,
+            Author = blog.Author,
+            Category = blog.Category.Title,
+            CreateDate = blog.CreateAt,
+            ReadingTime = blog.ReadingTime,
+
+            Tags = string.IsNullOrWhiteSpace(blog.SeoKeywords)
+                ? []
+                : blog.SeoKeywords.Split(',').Select(x => x.Trim()).ToList(),
+
+            RelatedBlogs = related.Select(x => new BlogCardVm
+            {
+                Id = x.Id,
+                Title = x.Title,
+                Slug = x.Slug,
+                Summary = x.Summery,
+                Image = x.Image,
+                CategoryName = x.Category.Title,
+                PublishDate = x.CreateAt
+            }).ToList()
+        };
+    }
+
     #region Website
 
     public async Task<List<BlogListItemVm>> GetLastBlogsAsync(int count = 6)
@@ -126,14 +173,7 @@ public class BlogService : CrudService<Blog>, IBlogService
             .ToListAsync();
     }
 
-    public async Task<BlogDetailsVm?> GetBySlugAsync(string slug)
-    {
-        var entity = await Table<Blog>()
-            .AsNoTracking()
-            .FirstOrDefaultAsync(x => x.Slug == slug && x.IsPublished);
-
-        return entity == null ? null : ToDetailsVm(entity);
-    }
+ 
 
     #endregion
 
@@ -204,29 +244,11 @@ public class BlogService : CrudService<Blog>, IBlogService
         };
     }
 
-    private static BlogDetailsVm ToDetailsVm(Blog entity)
+    public Task<BlogDetailVm?> GetBySlugAsync(string slug)
     {
-        return new BlogDetailsVm
-        {
-            Id = entity.Id,
-            Title = entity.Title,
-            Summary = entity.Summery,
-            Content = entity.Content,
-            Image = entity.Image,
-            Author = entity.Author,
-            PublishDate = entity.PublishDate,
-            ReadingTime = entity.ReadingTime,
-            BlogCategoryId = entity.BlogCategoryId,
-            IsPublished = entity.IsPublished,
-
-            Slug = entity.Slug,
-            SeoTitle = entity.SeoTitle,
-            SeoDescription = entity.SeoDescription,
-            SeoKeywords = entity.SeoKeywords,
-            CanonicalUrl = entity.CanonicalUrl,
-            Robots = entity.Robots
-        };
+        throw new NotImplementedException();
     }
+
 
     #endregion
 }

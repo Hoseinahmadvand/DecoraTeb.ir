@@ -1,4 +1,119 @@
 ﻿@page
 @model DecoraTeb.Pages.FAQModel
+
 @{
+    ViewData["Title"] = "سوالات متداول";
 }
+
+<section class="page-header blueprint-bg-dark">
+    <div class="container">
+
+        <nav class="page-crumb">
+            <a asp-page="/Index">خانه</a>
+            <span class="sep">/</span>
+            <span>سوالات متداول</span>
+        </nav>
+
+        <h1>سوالات متداول</h1>
+
+        <p>
+            پاسخ رایج‌ترین سوالات پزشکان و مدیران مراکز درمانی درباره خدمات دکوراطب
+        </p>
+
+    </div>
+
+    <div class="hs-shape">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+            <path d="M0,30 C280,80 500,0 760,22 C1040,46 1200,8 1440,38 L1440,70 L0,70 Z"
+                  fill="#fbf8f2"></path>
+        </svg>
+    </div>
+
+</section>
+
+<section class="section-pad">
+
+    <div class="container">
+
+        <div class="col-lg-9 mx-auto">
+
+            <div class="accordion" id="faqAccordion">
+
+                @foreach (var item in Model.Faqs)
+                {
+                    <div class="accordion-item mb-3 border-0 shadow-sm rounded-4 overflow-hidden">
+
+                        <h2 class="accordion-header">
+
+                            <button class="accordion-button collapsed fw-bold"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faq-@item.Id">
+
+                                @item.Question
+
+                            </button>
+
+                        </h2>
+
+                        <div id="faq-@item.Id"
+                             class="accordion-collapse collapse"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                @Html.Raw(item.Answer)
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="pb-5">
+
+    <div class="container">
+
+        <div class="cta-band">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8">
+
+                    <h2 class="mb-2">
+                        پاسخ سوال خود را پیدا نکردید؟
+                    </h2>
+
+                    <p class="mb-0 opacity-75">
+                        کارشناسان دکوراطب آماده پاسخگویی به سوالات شما هستند.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+
+                    <a asp-page="/Contact"
+                       class="btn btn-copper w-100">
+
+                        تماس با ما
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

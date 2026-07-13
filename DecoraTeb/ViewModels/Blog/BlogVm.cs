@@ -30,3 +30,5 @@ public abstract class BlogVm : SeoVm
 
     public bool IsPublished { get; set; }
 }
+
+

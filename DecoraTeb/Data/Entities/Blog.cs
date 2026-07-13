@@ -14,4 +14,7 @@ public class Blog : SeoEntity
     public long BlogCategoryId { get; set; }
     public bool IsPublished { get; set; }
 
+
+    public BlogCategory Category { get; set; }
+
 } 
